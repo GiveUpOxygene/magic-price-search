@@ -1,6 +1,5 @@
 # magic-price-search
 
-### Objectifs :
 Ce programme permet de récupérer le prix d'une carte ou d'un deck de cartes magic sur internet.
 
 ### To-do list : 
