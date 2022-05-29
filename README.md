@@ -4,14 +4,18 @@
 Ce programme permet de récupérer le prix d'une carte ou d'un deck de cartes magic sur internet.
 
 ### To-do list : 
-[] Plusieurs sites
-[x] Tableau des prix
-[] Informations correspondant aux prix (état, extension, langue)
-[] Lecture de fichier pour une liste de cartes
-[x] Récupération de la liste des cartes d'un deck pré-existant par Internet
-[x] Implémentation de classes pou la lisibilité et praticité d'utilisation
-[] Nettoyage du code en surplus
-[] Affichage graphique
+- [x] recherche d'une carte à l'aide d'internet
+- [x] Récupération du prix de la carte
+- [ ] Recherche sur différents sites pour trouver les meilleurs prix
+- [x] Calcul du prix d'un deck
+- [ ] Reconnaissance de la carte par caméra
+- [x] Tableau des prix
+- [ ] Informations correspondant aux prix (état, extension, langue)
+- [ ] Lecture de fichier pour une liste de cartes
+- [x] Récupération de la liste des cartes d'un deck pré-existant par Internet
+- [x] Implémentation de classes pou la lisibilité et praticité d'utilisation
+- [ ] Nettoyage du code en surplus
+- [ ] Affichage graphique (hors console)
 
 
 ### Librairies nécessaires : 
