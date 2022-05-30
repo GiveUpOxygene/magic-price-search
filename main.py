@@ -1,4 +1,3 @@
-from email import message
 import googlesearch as gr
 import requests as r
 import re
@@ -46,20 +45,29 @@ class Card:
             print(get_card_name_from_url(self.url) + " : " + str(price))
             return price
         
-    def read_price(self):
+    def get_card_info(self):
         req = r.get(self.url, 'html.parser')
         with open('temp_file.txt', 'w') as f:
             f.write(req.text)
         price = []
+        lang = []
+        foil = []
         with open("temp_file.txt", 'r') as f:
             for line in f.readlines():
                 if "prix_full" in line:
-                    temp = line.replace('<div class="prix_full">', "")
-                    temp = temp.replace('&nbsp;€</div>\n', "")
-                    temp = temp.replace(',', ".")
+                    temp = line.replace('<div class="prix_full">', "").replace('&nbsp;€</div>\n', "").replace(',', ".")
                     price.append(float(temp))
+                if "langue_small" in line :
+                    temp = line.split('class="langue_small" title="')[1].split('"')[0]
+                    lang.append(temp)
+                if "data-foil" in line :
+                    temp = line.split('data-foil="')
+                    print(temp)
+                    # foil.append(foil_state[temp])
         os.remove('temp_file.txt')
-        print(price)
+        print(foil)
+        self.price = price[0]
+        return(price, lang)
 
 class Deck:
     def __init__(self, name, card_list = None, url = None, deck_type = "Commander"):
@@ -177,16 +185,17 @@ def get_deck_card_list(deck_name):
     return occurs_deck_list, occurs_deck_number
 
 
-
+# ---Main---
+card_state = ["?", "Mint, Nmint", "Played", "?", "?", "?", "Exc", "?", "?", "?", "?", "Poor"]
+foil_state = {"O" : "Foil", "N" : "Non-Foil"}
 
 #print(get_card_name_from_url("https://www.play-in.com/magic/carte/19655-omnath_locus_de_rage"))
 # print(card_price_from_url("https://www.play-in.com/magic/carte/19655-omnath_locus_de_rage"))
-# app = App(title = "Magic price finder")
+app = App(title = "Magic price finder")
 # deck_list, deck_number = get_deck_card_list("aura de courage")
-omnath = Card(name = "Omnath, Locus de rage")
+omnath = Card(name = "Staff of domination")
 omnath.url = omnath.get_url()
 print(omnath.url)
-omnath.read_price()
 
 # print(deck_list)
 # for index in range(np.size(deck_list)):
@@ -194,5 +203,10 @@ omnath.read_price()
 #     print("card0 = " + get_card_name_from_url(url))
 #     my_card_price = card_price_from_url(url)
 #     deck_price += float(deck_number[index]) * my_card_price
-# message = Text(app, text = "deck price = " + str(deck_price))
-# app.display()
+title = Text(app, text = "Magic price finder", size = 30, color = "black")
+back_n = Text(app, text = "\n\n\n")
+price_tab, lang_tab = omnath.get_card_info()
+Text(app, text = omnath.name, size = 20)
+for index in range(len(price_tab)): 
+    Text(app, text = "Prix : " + str(price_tab[index]) + "€  " + lang_tab[index])
+app.display()
