@@ -13,7 +13,7 @@ Ce programme permet de récupérer le prix d'une carte ou d'un deck de cartes ma
 - [x] Lecture de fichier pour une liste de cartes
 - [x] Récupération de la liste des cartes d'un deck pré-existant par Internet
 - [x] Implémentation de classes pou la lisibilité et praticité d'utilisation
-- [ ] Nettoyage du code en surplus
+- [x] Nettoyage du code en surplus
 - [x] Affichage graphique (hors console)
 
 
