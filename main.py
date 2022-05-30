@@ -42,7 +42,7 @@ class Card:
                 price = 0.25
             else:
                 price = float(occurs[0])
-            print(get_card_name_from_url(self.url) + " : " + str(price))
+            print(self.name + " : " + str(price))
             return price
         
     def get_card_info(self):
@@ -82,7 +82,6 @@ class Deck:
         self.deck_type = deck_type
         if card_list != None:
             self.card_list = self.read_card_list(card_list)
-
     
     def get_url(self):
         query = "deck commander " + self.name.lower() + " play in magic bazar"
@@ -116,77 +115,6 @@ class Deck:
                 card_dict[occurs_deck_list[index]] = int(occurs_deck_number[index])
         return card_dict
 
-def get_card_name_from_url(card_url):
-    req = r.get(card_url, 'html.parser')
-    # occurs = re.compile("'<title>(?P<name>[0-9a-zA-Z,'\- éèàêëîœÀÉÈÇŒÎ]*)<\\title>").findall(req.text)
-    with open('temp_file.txt', 'w') as f:
-        f.write(req.text)
-    with open('temp_file.txt', 'r') as f:
-        card_name = f.readlines()[3]
-    os.remove('temp_file.txt')
-    return card_name[7:-60].split(" - ")[0]
-
-def card_price(card_name):
-    #retourne le prix d'une carte trouvé sur play-in, et 0.25€ si la carte n'est pas trouvée
-    query = card_name.lower() + "play in magic bazar"
-    for url in gr.search(query, tld="co.in", num=1, stop=1, pause=2):
-        req = r.get(url, 'html.parser')
-        occurs = re.compile(r'(?P"prix_full">[0-9],[0-9]{2})').findall(req.text)
-        while('1.12' in occurs):
-            occurs.remove('1.12')
-        print(occurs)
-        if (card_name in "Montagne Île Plaine Forêt Marais") or (occurs == []):
-            price = 0.15
-        else:
-            price = float(occurs[0])
-        print(card_name + " : " + str(price))
-        return price
-
-def card_price_list(card_name):
-    #retourne une liste contenant tous les prix d'une carte listés sur play-in
-    query = card_name.lower() + "play in magic bazar"
-    for url in gr.search(query, tld="co.in", num=1, stop=1, pause=2):
-        req = r.get(url, 'html.parser')
-        occurs = re.compile(r'"prix_full">(?P<price>[0-9]*\.[0-9]{2})').findall(req.text)
-        while('1.12' in occurs):
-            occurs.remove('1.12')
-        print(occurs)
-        if (card_name in "Montagne Île Plaine Forêt Marais"):
-            price = 0.15
-        elif (occurs == []):
-            price = 0.00
-            print("card not found or not listed")
-        else:
-            price = float(occurs[0])
-        print(card_name + " : " + str(price))
-        return price
-
-def card_price_from_url(card_url):
-    req = r.get(card_url, 'html.parser')
-    occurs = re.compile('"prix_full">(?P<price>[0-9]*\.[0-9]{2})').findall(req.text)
-    while('1.12' in occurs):
-        occurs.remove('1.12')
-    print(occurs)
-    if (card_url in "Montagne Île Plaine Forêt Marais") or (occurs == []):
-        price = 0.25
-    else:
-        price = float(occurs[0])
-    print(get_card_name_from_url(card_url) + " : " + str(price))
-    return price
-
-def get_deck_card_list(deck_name):
-    query = "deck commander " + deck_name.lower() + " play in magic bazar"
-    for url in gr.search(query, tld="co.in", num=1, stop=1, pause=2):
-        req = r.get(url, 'html.parser')
-        occurs = re.compile('/api/[0-9a-zA-Z.?=]*').findall(req.text)
-        deck_list_url ='https://www.play-in.com' + occurs[0]
-        req_deck_list = r.get(deck_list_url, 'html.parser')
-        occurs_deck_list = re.compile("(?P<name>\/magic\/carte\/[0-9a-zA-Z,'\- éèàêëîœÀÉÈÇŒÎ]*)").findall(req_deck_list.text)
-        occurs_deck_number = re.compile("\<span\>(?P<number>[0-9]*) x\</span\>").findall(req_deck_list.text)
-        print(occurs_deck_number)
-        for card in occurs_deck_list:
-            print("card1 = " + card)            
-    return occurs_deck_list, occurs_deck_number
 
 
 # ---Main---
@@ -202,7 +130,7 @@ foil_state = {"O" : "Foil", "N" : "Non-Foil"}
 #     my_card_price = card_price_from_url(url)
 #     deck_price += float(deck_number[index]) * my_card_price
 
-app = App(title = "Magic price finder", layout = "grid")
+app = App(title = "Magic price finder")
 searched_card = Card(name = "Staff of domination")
 searched_card.url = searched_card.get_url()
 print(searched_card.url)
@@ -211,5 +139,5 @@ price_tab, lang_tab, foil_tab, state_tab = searched_card.get_card_info()
 Text(app, text = searched_card.name, size = 20)
 Text(app, text = "\n\n\n")
 for index in range(len(price_tab)):
-    Text(app, text = "Prix : " + str(price_tab[index]) + "€, " + card_state[state_tab[index]] + ", " + lang_tab[index])
+    Text(app, text = "Prix : " + "{:.2f}".format(price_tab[index]) + "€, " + card_state[state_tab[index]] + ", " + lang_tab[index])
 app.display()
