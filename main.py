@@ -3,7 +3,7 @@ import requests as r
 import re
 import numpy as np
 import os
-from guizero import App, Text
+from guizero import App, Text, TextBox, PushButton
 
 class Card:
     def __init__(self, name = None, url = None, price = 0.25):
@@ -74,14 +74,15 @@ class Card:
         return(price, lang, foil, state)
 
 class Deck:
-    def __init__(self, name, card_list = None, url = None, deck_type = "Commander"):
+    def __init__(self, name, card_list_file = None, url = None, deck_type = "Commander"):
         self.name = name
         self.url = url
+        self.deck_price = 0
         if self.url == None:
             self.get_url()
         self.deck_type = deck_type
-        if card_list != None:
-            self.card_list = self.read_card_list(card_list)
+        if card_list_file != None:
+            self.card_list = self.read_card_list(card_list_file)
     
     def get_url(self):
         query = "deck commander " + self.name.lower() + " play in magic bazar"
@@ -113,13 +114,42 @@ class Deck:
             card_dict = {}
             for index in range(len(occurs_deck_list)):
                 card_dict[occurs_deck_list[index]] = int(occurs_deck_number[index])
+        self.card_list = card_dict
         return card_dict
 
+def deck_search(name):
+    searched_deck = Deck(name)
+    searched_deck.get_card_list()
+    for card in searched_deck.card_list:
+        print(card)
+        # my_card = Card(card)
+        # my_card.get_price()
+    
+def card_search(name):
+    searched_card = Card(name)
+    searched_card.url = searched_card.get_url()
+    print(searched_card.url)
+    price_tab, lang_tab, foil_tab, state_tab = searched_card.get_card_info()
+    Text(app, text = searched_card.name, size = 20)
+    for index in range(len(price_tab)):
+        Text(app, text = "Prix : " + "{:.2f}".format(price_tab[index]) + "€, " + card_state[state_tab[index]] + ", " + lang_tab[index])
+    app.display()
 
+def remove_former_screen():
+    for widget in app.children:
+        widget.destroy()
 
 # ---Main---
 card_state = ["?", "Mint,Nmint", "Played", "?", "?", "?", "Exc", "?", "?", "?", "?", "Poor"]
 foil_state = {"O" : "Foil", "N" : "Non-Foil"}
+app = App(title = "Magic price finder")
+title = Text(app, text = "Magic price finder", size = 30, color = "black")
+my_text = TextBox(app, text = "Magic", width="fill")
+card_button = PushButton(app, text = "Find card", command = lambda: card_search(my_text.value))
+deck_button = PushButton(app, text = "Find deck", command = lambda: deck_search(my_text.value))
+app.display()
+
+
 
 
 # deck_list, deck_number = get_deck_card_list("aura de courage")
@@ -130,14 +160,3 @@ foil_state = {"O" : "Foil", "N" : "Non-Foil"}
 #     my_card_price = card_price_from_url(url)
 #     deck_price += float(deck_number[index]) * my_card_price
 
-app = App(title = "Magic price finder")
-searched_card = Card(name = "Staff of domination")
-searched_card.url = searched_card.get_url()
-print(searched_card.url)
-title = Text(app, text = "Magic price finder", size = 30, color = "black")
-price_tab, lang_tab, foil_tab, state_tab = searched_card.get_card_info()
-Text(app, text = searched_card.name, size = 20)
-Text(app, text = "\n\n\n")
-for index in range(len(price_tab)):
-    Text(app, text = "Prix : " + "{:.2f}".format(price_tab[index]) + "€, " + card_state[state_tab[index]] + ", " + lang_tab[index])
-app.display()
