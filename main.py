@@ -118,6 +118,7 @@ class Deck:
         return card_dict
 
 def deck_search(name):
+    remove_former_screen()
     searched_deck = Deck(name)
     searched_deck.get_card_list()
     for card in searched_deck.card_list:
@@ -126,22 +127,24 @@ def deck_search(name):
         # my_card.get_price()
     
 def card_search(name):
+    remove_former_screen()
     searched_card = Card(name)
     searched_card.url = searched_card.get_url()
     print(searched_card.url)
     price_tab, lang_tab, foil_tab, state_tab = searched_card.get_card_info()
-    Text(app, text = searched_card.name, size = 20)
+    text_list.append(Text(app, text = searched_card.name, size = 20))
     for index in range(len(price_tab)):
-        Text(app, text = "Prix : " + "{:.2f}".format(price_tab[index]) + "€, " + card_state[state_tab[index]] + ", " + lang_tab[index])
+        text_list.append(Text(app, text = "Prix : " + "{:.2f}".format(price_tab[index]) + "€, " + card_state[state_tab[index]] + ", " + lang_tab[index]))
     app.display()
 
 def remove_former_screen():
-    for widget in app.children:
-        widget.destroy()
+    for text in text_list:
+        text.destroy()
 
 # ---Main---
 card_state = ["?", "Mint,Nmint", "Played", "?", "?", "?", "Exc", "?", "?", "?", "?", "Poor"]
 foil_state = {"O" : "Foil", "N" : "Non-Foil"}
+text_list = []
 app = App(title = "Magic price finder")
 title = Text(app, text = "Magic price finder", size = 30, color = "black")
 my_text = TextBox(app, text = "Magic", width="fill")
