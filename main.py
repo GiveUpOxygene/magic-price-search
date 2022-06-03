@@ -3,13 +3,15 @@ import requests as r
 import re
 import numpy as np
 import os
-from guizero import App, Text, TextBox, PushButton
+from guizero import App, Text, TextBox, PushButton, Box
 
 class Card:
     def __init__(self, name = None, url = None, price = 0.25):
         self.name = name
         self.url = url
         self.price = price
+        self.get_url()
+        self.get_name()
         
     def get_url(self):
         if self.name == None:
@@ -138,8 +140,10 @@ def card_search(name):
     app.display()
 
 def remove_former_screen():
+    print(text_list)
     for text in text_list:
         text.destroy()
+    text_list.clear()
 
 # ---Main---
 card_state = ["?", "Mint,Nmint", "Played", "?", "?", "?", "Exc", "?", "?", "?", "?", "Poor"]
@@ -148,8 +152,9 @@ text_list = []
 app = App(title = "Magic price finder")
 title = Text(app, text = "Magic price finder", size = 30, color = "black")
 my_text = TextBox(app, text = "Magic", width="fill")
-card_button = PushButton(app, text = "Find card", command = lambda: card_search(my_text.value))
-deck_button = PushButton(app, text = "Find deck", command = lambda: deck_search(my_text.value))
+button_box = Box(app, align="top", width="fill")
+card_button = PushButton(button_box, text = "Find card", command = lambda: card_search(my_text.value),align="left",width="fill")
+deck_button = PushButton(button_box, text = "Find deck", command = lambda: deck_search(my_text.value),align="left",width="fill")
 app.display()
 
 
