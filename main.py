@@ -10,7 +10,8 @@ class Card:
         self.name = name
         self.url = url
         self.price = price
-        self.get_url()
+        if not (self.name in "Montagne Île Plaine Forêt Marais"):
+            self.get_url()
         self.get_name()
         
     def get_url(self):
@@ -34,18 +35,20 @@ class Card:
         self.name = card_name[7:-60].split(" - ")[0]
     
     def get_price(self):
+        if self.name in "Montagne Île Plaine Forêt Marais" :
+            return 0.25
         if self.url != None:
             req = r.get(self.url, 'html.parser')
-            occurs = re.compile('"prix_full">(?P<price>[0-9]*\.[0-9]{2})').findall(req.text)
+            occurs = re.compile('"prix_full">(?P<price>[0-9]+\.[0-9]{2})&nbsp;€').findall(req.text)
             while('1.12' in occurs):
                 occurs.remove('1.12')
             print(occurs)
-            if (self.url in "Montagne Île Plaine Forêt Marais") or (occurs == []):
+            if (occurs == []):
                 price = 0.25
             else:
                 price = float(occurs[0])
             print(self.name + " : " + str(price))
-            return price
+        return price
         
     def get_card_info(self):
         req = r.get(self.url, 'html.parser')
@@ -80,6 +83,7 @@ class Deck:
         self.name = name
         self.url = url
         self.deck_price = 0
+        self.card_number = []
         if self.url == None:
             self.get_url()
         self.deck_type = deck_type
@@ -88,8 +92,8 @@ class Deck:
     
     def get_url(self):
         query = "deck commander " + self.name.lower() + " play in magic bazar"
-        url = gr.search(query, num = 1, stop = 1)[0]
-        self.url = url
+        for url in gr.search(query, num = 1, stop = 1):
+            self.url = url
         print(url)
     
     def read_card_list(self, card_list):
@@ -113,20 +117,20 @@ class Deck:
             occurs_deck_list = re.compile("(?P<name>\/magic\/carte\/[0-9a-zA-Z,'\- éèàêëîœÀÉÈÇŒÎ]*)").findall(req_deck_list.text)
             occurs_deck_number = re.compile("\<td\>\<span\>(?P<number>[0-9]{1-2}) x\</span\>").findall(req_deck_list.text)
             print(occurs_deck_number)
-            card_dict = {}
-            for index in range(len(occurs_deck_list)):
-                card_dict[occurs_deck_list[index]] = int(occurs_deck_number[index])
-        self.card_list = card_dict
-        return card_dict
+        self.card_list = occurs_deck_list
+        self.card_number = occurs_deck_number
 
 def deck_search(name):
     remove_former_screen()
     searched_deck = Deck(name)
     searched_deck.get_card_list()
+    deck_price = 0
     for card in searched_deck.card_list:
         print(card)
-        # my_card = Card(card)
-        # my_card.get_price()
+        my_card = Card(card)
+        deck_price += my_card.get_price()
+        text_list.append(Text(app, text = "prix du deck : " + "{:.2f}".format(deck_price)))
+        
     
 def card_search(name):
     remove_former_screen()
