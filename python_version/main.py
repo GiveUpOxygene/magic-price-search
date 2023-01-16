@@ -3,81 +3,79 @@ import requests as r
 import re
 import numpy as np
 import os
-from guizero import App, Text, TextBox, PushButton, Box
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import QFont
+from bs4 import BeautifulSoup as BS
 
 class Card:
-    def __init__(self, name = None, url = None, price = 0.25):
-        self.name = name
+    def __init__(self, name = None, url = None):
         self.url = url
-        self.price = price
-        if not (self.name in "Montagne Île Plaine Forêt Marais"):
-            self.get_url()
-        self.get_name()
+        self.url = self.get_url(name)   
+        self.name = self.get_name()
+        self.price_tab = None
+        self.price_tab = self.get_price_tab()
         
-    def get_url(self):
-        if self.name == None:
+    def get_url(self, name):
+        if name == None:
             print("No name")
             return None
-        for url in gr.search(self.name + "playin magic bazar", num = 1, stop = 1):
-            self.url = url
+        for my_url in gr.search("site:https://boutique.magiccorporation.com/ " + name, num = 1, stop = 1):
+            self.url = my_url
         return self.url
         
     def get_name(self):
         if self.url == None:
             print("No url")
             return None
-        req = r.get(self.url, 'html.parser')
-        with open('temp_file.txt', 'w') as f:
-            f.write(req.text)
-        with open('temp_file.txt', 'r') as f:
-            card_name = f.readlines()[3]
-        os.remove('temp_file.txt')
-        self.name = card_name[7:-60].split(" - ")[0]
+        # TODO : get the name of the card with some good code and not this clusterfuck
+        self.name = ' '.join(self.url.split('/')[-1].split('-')[3:]).replace('-', ' ').replace('.html', '')
+        return self.name
     
-    def get_price(self):
+    # def get_price(self):
+    #     if self.name in "Montagne Île Plaine Forêt Marais" :
+    #         return 0.25
+    #     if self.url != None:
+    #         req = r.get(self.url, 'html.parser')
+    #         occurs = re.compile('images/magic/editions/sigles/(?P<edition>.+)/').findall(req.text)
+    #         occurs2 = re.compile('[0-9]+[.][0-9]+ €').findall(req.text)
+    #         dico = {x:y for x,y in zip(occurs, occurs2)}
+    #         if (occurs == []):
+    #             price = "No price"
+    #         else:
+    #             price = float(occurs[0].replace(' €', ''))
+    #         print(self.name + " : " + str(price))
+    #     return price
+        
+    def get_price_tab(self):
         if self.name in "Montagne Île Plaine Forêt Marais" :
             return 0.25
         if self.url != None:
             req = r.get(self.url, 'html.parser')
-            occurs = re.compile('"prix_full">(?P<price>[0-9]+\.[0-9]{2})&nbsp;€').findall(req.text)
-            while('1.12' in occurs):
-                occurs.remove('1.12')
-            print(occurs)
+            #create new file called card.html and write the html code of the card
+            with open("card.html", 'w', encoding="utf8") as f:
+                f.write(req.text)
+                
+            with open("card.html", 'r', encoding="utf8") as f:
+                text = f.read()
+            
+            soup = BS(text)
+            for p in soup.find_all('div'):
+                print (p.get("class"))
+            occurs = re.compile('images/magic/editions/sigles/(?P<edition>.+)/').findall(text)
             if (occurs == []):
-                price = 0.25
-            else:
-                price = float(occurs[0])
-            print(self.name + " : " + str(price))
-        return price
-        
-    def get_card_info(self):
-        req = r.get(self.url, 'html.parser')
-        with open('temp_file.txt', 'w') as f:
-            f.write(req.text)
-        price = []
-        lang = []
-        foil = []
-        state = []
-        
-        with open("temp_file.txt", 'r') as f:
-            for line in f.readlines():
-                if "prix_full" in line:
-                    temp = line.replace('<div class="prix_full">', "").replace('&nbsp;€</div>\n', "").replace(',', ".")
-                    price.append(float(temp))
-                if 'data-foil="' in line :
-                    temp = line.split('data')
-                    #temp[0] : inutile
-                    #temp[1] : foil
-                    foil.append(temp[1].split('"')[0])
-                    #temp[2] : langue abrégée
-                    lang.append(temp[2].split('"')[1])
-                    #temp[3] : état + inutile
-                    state.append(int(temp[3].split('"')[1]))
-                    # foil.append(foil_state[temp])
-        os.remove('temp_file.txt')
-        self.price = price[0]
-        return(price, lang, foil, state)
+                print("No price")
+                exit(1)
+            occurs2 = re.compile('[0-9]+[\.][0-9]+ €').findall(text)
+            self.price_tab = {x:y for x,y in zip(occurs, occurs2)}
+        return self.price_tab
 
+    
+    def debug_info(self):
+        print("Name : " + self.name)
+        print("Url : " + str(self.url))
+        print("Price : " + str(self.price_tab))
+        
+        
 class Deck:
     def __init__(self, name, card_list_file = None, url = None, deck_type = "Commander"):
         self.name = name
@@ -120,55 +118,31 @@ class Deck:
         self.card_list = occurs_deck_list
         self.card_number = occurs_deck_number
 
-def deck_search(name):
-    remove_former_screen()
-    searched_deck = Deck(name)
-    searched_deck.get_card_list()
-    deck_price = 0
-    for card in searched_deck.card_list:
-        print(card)
-        my_card = Card(card)
-        deck_price += my_card.get_price()
-        text_list.append(Text(app, text = "prix du deck : " + "{:.2f}".format(deck_price)))
-        
-    
-def card_search(name):
-    remove_former_screen()
-    searched_card = Card(name)
-    searched_card.url = searched_card.get_url()
-    print(searched_card.url)
-    price_tab, lang_tab, foil_tab, state_tab = searched_card.get_card_info()
-    text_list.append(Text(app, text = searched_card.name, size = 20))
-    for index in range(len(price_tab)):
-        text_list.append(Text(app, text = "Prix : " + "{:.2f}".format(price_tab[index]) + "€, " + card_state[state_tab[index]] + ", " + lang_tab[index]))
-    app.display()
 
-def remove_former_screen():
-    print(text_list)
-    for text in text_list:
-        text.destroy()
-    text_list.clear()
 
 # ---Main---
-card_state = ["?", "Mint,Nmint", "Played", "?", "?", "?", "Exc", "?", "?", "?", "?", "Poor"]
-foil_state = {"O" : "Foil", "N" : "Non-Foil"}
-text_list = []
-app = App(title = "Magic price finder")
-title = Text(app, text = "Magic price finder", size = 30, color = "black")
-my_text = TextBox(app, text = "Magic", width="fill")
-button_box = Box(app, align="top", width="fill")
-card_button = PushButton(button_box, text = "Find card", command = lambda: card_search(my_text.value),align="left",width="fill")
-deck_button = PushButton(button_box, text = "Find deck", command = lambda: deck_search(my_text.value),align="left",width="fill")
-app.display()
 
 
-
-
-# deck_list, deck_number = get_deck_card_list("aura de courage")
-# print(deck_list)
-# for index in range(np.size(deck_list)):
-#     url = ("https://www.play-in.com" + deck_list[index]).replace(" ", "_")
-#     print("card0 = " + get_card_name_from_url(url))
-#     my_card_price = card_price_from_url(url)
-#     deck_price += float(deck_number[index]) * my_card_price
-
+def main():
+    # app = QApplication([])
+    # window = QWidget()
+    # window.setGeometry(300, 300, 500, 500)
+    # window.setWindowTitle("Magic Card Price")
+    
+    # label = QLabel(window)
+    # label.setText("Hello World")
+    # label.setFont(QFont("Arial", 20))
+    
+    # layout = QVBoxLayout()
+    
+    # label = QLabel("Press Button")
+    # button = QPushButton("Click Me")
+    
+    # window.show()
+    # app.exec_()
+    my_card = Card("distortion chaotique")
+    my_card.debug_info()
+    
+    
+if __name__ == "__main__":
+    main()
