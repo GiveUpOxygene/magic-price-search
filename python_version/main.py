@@ -1,7 +1,6 @@
 import googlesearch as gr
 import requests as r
 import re
-import numpy as np
 import os
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QFont
@@ -10,10 +9,10 @@ from bs4 import BeautifulSoup as BS
 class Card:
     def __init__(self, name = None, url = None):
         self.url = url
-        self.url = self.get_url(name)   
+        self.url = self.get_url(name)
         self.name = self.get_name()
-        self.price_tab = None
-        self.price_tab = self.get_price_tab()
+        self.filename = ""
+        self.info_tab = self.get_info()
         
     def get_url(self, name):
         if name == None:
@@ -24,56 +23,85 @@ class Card:
         return self.url
         
     def get_name(self):
+        '''Gets the name of the card from the url'''
         if self.url == None:
             print("No url")
             return None
         # TODO : get the name of the card with some good code and not this clusterfuck
         self.name = ' '.join(self.url.split('/')[-1].split('-')[3:]).replace('-', ' ').replace('.html', '')
         return self.name
+
     
-    # def get_price(self):
-    #     if self.name in "Montagne Île Plaine Forêt Marais" :
-    #         return 0.25
-    #     if self.url != None:
-    #         req = r.get(self.url, 'html.parser')
-    #         occurs = re.compile('images/magic/editions/sigles/(?P<edition>.+)/').findall(req.text)
-    #         occurs2 = re.compile('[0-9]+[.][0-9]+ €').findall(req.text)
-    #         dico = {x:y for x,y in zip(occurs, occurs2)}
-    #         if (occurs == []):
-    #             price = "No price"
-    #         else:
-    #             price = float(occurs[0].replace(' €', ''))
-    #         print(self.name + " : " + str(price))
-    #     return price
+    def get_info(self, debug = False):
+        '''
+        Récupère les informations d'achat
         
-    def get_price_tab(self):
-        if self.name in "Montagne Île Plaine Forêt Marais" :
-            return 0.25
+        Renvoie un dictionnaire contenant les informations sur les différentes éditions de la carte
+        et leur prix
+        ----------
+        Parameters
+        ----------
+        self : Card
+            La carte dont on veut récupérer les informations
+        debug : bool
+            Si True, affiche les informations récupérées au cours du parsing
+            
+        ----------
+        Returns
+        ----------
+        dico : dict
+            {edition : (prix, quantité, condition)}
+        '''
+        # initialisation de variables
+        edition = []
+        quantity = []
+        condition = []
+        price = []
+        # vérification de l'url
         if self.url != None:
             req = r.get(self.url, 'html.parser')
-            #create new file called card.html and write the html code of the card
-            with open("card.html", 'w', encoding="utf8") as f:
-                f.write(req.text)
-                
-            with open("card.html", 'r', encoding="utf8") as f:
-                text = f.read()
-            
-            soup = BS(text)
-            for p in soup.find_all('div'):
-                print (p.get("class"))
-            occurs = re.compile('images/magic/editions/sigles/(?P<edition>.+)/').findall(text)
-            if (occurs == []):
-                print("No price")
-                exit(1)
-            occurs2 = re.compile('[0-9]+[\.][0-9]+ €').findall(text)
-            self.price_tab = {x:y for x,y in zip(occurs, occurs2)}
-        return self.price_tab
+        
+        self.filename = self.name.replace(' ', '_') + '.html'
+        with open(f"./cards/{self.filename}", 'w', encoding="utf8") as f:
+            f.write(req.text)
+        with open(f"./cards/{self.filename}", 'r', encoding="utf8") as f:
+            text = f.read()
+
+        # parsing du code html
+        soup = BS(text,"lxml")
+        for p in soup.find_all('div'):
+            if p.get('class') == ['dispo']:
+                for p3 in p.find_all('td'):
+                    if p3.get_text() != "" :
+                        if p3.find('select') != None:
+                            if debug:
+                                print("Quantité : " + p3.get_text()[-1])
+                            quantity.append(p3.get_text()[-1])
+                        elif p3.get('style') == None:
+                            if p3.find('img') != None:
+                                if debug:
+                                    print("Edition : " + p3.get_text())
+                                edition.append(p3.get_text())
+                            else:
+                                if debug:
+                                    print("Condition : " + p3.get_text())
+                                condition.append(p3.get_text())
+                        else:
+                            if debug:
+                                print("Prix : " + p3.get_text())
+                            price.append(p3.get_text())
+                            
+        dico = {x:y for x,y in zip(edition, zip(price, quantity, condition))}
+        self.info_tab = dico
+        if debug == False:
+            os.remove(f"./cards/{self.filename}")
+        return dico
 
     
     def debug_info(self):
         print("Name : " + self.name)
         print("Url : " + str(self.url))
-        print("Price : " + str(self.price_tab))
+        print("Price : " + str(self.info_tab))
         
         
 class Deck:
@@ -140,7 +168,7 @@ def main():
     
     # window.show()
     # app.exec_()
-    my_card = Card("distortion chaotique")
+    my_card = Card("galea embraseuse d'espoir")
     my_card.debug_info()
     
     
