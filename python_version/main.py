@@ -10,7 +10,9 @@ class Card:
     def __init__(self, name = None, url = None):
         self.url = url
         self.url = self.get_url(name)
+        print(self.url)
         self.name = self.get_name()
+        print(self.name)
         self.filename = ""
         self.info_tab = self.get_info()
         
@@ -103,48 +105,121 @@ class Card:
         print("Url : " + str(self.url))
         print("Price : " + str(self.info_tab))
         
+    def best_price(self, quantity=1):
+        min_price = 1_000_000 # prix supérieur à celui de n'importe quelle carte
+        min_price_edition = ""
+        for edition in self.info_tab:
+            if (min_price > float(self.info_tab[edition][0][:-2])) and (float(self.info_tab[edition][1][:-2]) >= quantity):
+                min_price = self.info_tab[edition][0]
+                min_price_edition = edition
+        if min_price_edition == "":
+            return None
+        else:
+            return (min_price_edition, min_price)
+            
+        
         
 class Deck:
-    def __init__(self, name, card_list_file = None, url = None, deck_type = "Commander"):
-        self.name = name
-        self.url = url
-        self.deck_price = 0
-        self.card_number = []
-        if self.url == None:
-            self.get_url()
-        self.deck_type = deck_type
-        if card_list_file != None:
-            self.card_list = self.read_card_list(card_list_file)
-    
+    def __init__(self, name, card_list_file = None, url = None, deck_type = "Commander", auto = True):
+        if auto:
+            self.deck_type = deck_type
+            self.name = name
+            self.url = url
+            self.deck_price = 0
+            if self.url == None:
+                self.get_url()
+            self.deck_list = self.get_card_list(self.url)
+            
+        else:
+            self.name = name
+            self.url = None
+            self.deck_type = deck_type
+            if card_list_file != None:
+                self.deck_list = self.read_card_list(card_list_file)
+            else:
+                print("No card list file")
+                exit(1)
+            
     def get_url(self):
-        query = "deck commander " + self.name.lower() + " play in magic bazar"
+        query = "site:https://www.play-in.com/ deck " + self.deck_type + " " + self.name.lower()
         for url in gr.search(query, num = 1, stop = 1):
             self.url = url
         print(url)
     
-    def read_card_list(self, card_list):
-        #lit le fichier card_list et retourne une liste de cartes sous forme de dictionnaire
-        #contenant les noms des cartes et leur nombre
-        card_dict = {}
+    def read_card_list(self, card_list, debug = False):
+        '''Récupère la liste des cartes du deck depuis un fichier.cod (format cockatrice)'''
+        dico = {}
         with open(card_list, 'r') as f:
-            for line in f.readlines:
-                values = line.split(":")
-                card_dict[values[0]] = int(values[1])
-        return card_dict
+            text = f.read()
+        soup = BS(text, "lxml")
+        for p in soup.find_all('card'):
+            dico[p.get('name')] = p.get('number')
+            if debug:
+                print(p.get('name') + " " + p.get('number'))
+        return dico
+        
+    def write_card_list(self, deck_name):
+        '''Ecrit la liste des cartes du deck dans un fichier.cod (format cockatrice)'''
+        with open("./decks/" + deck_name.replace(" ", "_") + ".cod", 'w', encoding="UTF8") as f:
+            f.write('<cockatrice_deck version="1">\n')
+            f.write('\t<deckname>' + self.name + '</deckname>\n')
+            f.write('\t<comments>généré automatiquement</comments>\n')
+            f.write('\t<zone name="main">\n')
+            for card in self.deck_list.keys():
+                f.write('\t\t<card number="' + str(self.deck_list[card]) + '" name="' + card + '"/>\n')
+            f.write('\t</zone>\n')
+            f.write('</cockatrice_deck>')
     
-    def get_card_list(self):
+    def get_card_list(self, write = False, debug = False):
         #récupère la liste depuis internet
-        query = "deck commander " + self.name.lower() + " play in magic bazar"
+        query = "site:https://www.play-in.com deck " + self.deck_type + " " + self.name.lower() + " play in magic bazar"
         for url in gr.search(query, tld="co.in", num=1, stop=1, pause=2):
             req = r.get(url, 'html.parser')
-            occurs = re.compile('/api/[0-9a-zA-Z.?=]*').findall(req.text)
-            deck_list_url ='https://www.play-in.com' + occurs[0]
-            req_deck_list = r.get(deck_list_url, 'html.parser')
-            occurs_deck_list = re.compile("(?P<name>\/magic\/carte\/[0-9a-zA-Z,'\- éèàêëîœÀÉÈÇŒÎ]*)").findall(req_deck_list.text)
-            occurs_deck_number = re.compile("\<td\>\<span\>(?P<number>[0-9]{1-2}) x\</span\>").findall(req_deck_list.text)
-            print(occurs_deck_number)
-        self.card_list = occurs_deck_list
-        self.card_number = occurs_deck_number
+        #récupération de la page contenant la liste des cartes
+        occurs = re.compile('/api/[0-9a-zA-Z.?=]*').findall(req.text)
+        deck_list_url ='https://en.play-in.com' + occurs[0]
+        req_deck_list = r.get(deck_list_url, 'html.parser')
+        # with open("./temp/deck.html", 'w') as f:
+        #     f.write(req_deck_list.text)
+        # with open("./temp/deck.html", 'r') as f:
+        #     text = f.read()
+        
+        # récupération des cartes et de leur nombre
+        card_list = []
+        card_number = []
+        soup = BS(req_deck_list.text, "lxml")
+        cache = False
+        for card in soup.div.find_all("div"):
+            if card.get("title") != None:
+                if debug:
+                    print(card.get("title"))
+                card_list.append(card.get("title"))
+            if card.span != None:
+                if cache:
+                    if debug:
+                        print(card.span.get_text()[0])
+                    card_number.append(card.span.get_text()[0])
+                    cache = False
+                else:
+                    cache = True
+        self.deck_list = {x:y for x,y in zip(card_list, card_number)}
+        if write:
+            self.write_card_list(self.name)
+        return self.deck_list
+            
+    def get_deck_price(self, debug = False):
+        #récupère le prix du deck depuis internet
+        self.deck_price = 0
+        for card in self.deck_list.keys():
+            if debug:
+                print(card)
+            c = Card(card)
+            if c.best_price()[1] != None:
+                self.deck_price += c.best_price()[1] * int(self.deck_list[card])
+            else :
+                print(card + " not available")
+        return self.deck_price
+                
 
 
 
@@ -168,9 +243,18 @@ def main():
     
     # window.show()
     # app.exec_()
-    my_card = Card("galea embraseuse d'espoir")
-    my_card.debug_info()
+    return
+    
+    
+def debug_main():
+    # deck = Deck("massacre des maestros")  
+    # card = Card("cornucopia") 
+    # card.debug_info()
+    
+    deck = Deck("massacre des maestros")
+    deck.write_card_list(deck.name)
+    # print(deck.get_deck_price())
     
     
 if __name__ == "__main__":
-    main()
+    debug_main()

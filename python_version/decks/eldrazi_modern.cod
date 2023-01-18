@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cockatrice_deck version="1">
+    <deckname>eldrazi modern</deckname>
+    <comments>pas opti</comments>
+    <zone name="main">
+        <card number="4" name="Urza's Mine"/>
+        <card number="4" name="Urza's Power Plant"/>
+        <card number="4" name="Urza's Tower"/>
+        <card number="4" name="Astral Cornucopia"/>
+        <card number="4" name="Coretapper"/>
+        <card number="1" name="Ulamog, the Infinite Gyre"/>
+        <card number="1" name="Emrakul, the Aeons Torn"/>
+        <card number="4" name="Cryptolith Fragment"/>
+        <card number="2" name="Sanctum of Ugin"/>
+        <card number="2" name="Ugin, the Ineffable"/>
+        <card number="4" name="Conduit of Ruin"/>
+        <card number="4" name="Zhalfirin Void"/>
+        <card number="4" name="Hedron Crawler"/>
+        <card number="4" name="Palladium Myr"/>
+        <card number="1" name="Kozilek, the Great Distortion"/>
+        <card number="2" name="Semblance Anvil"/>
+        <card number="5" name="Wastes"/>
+        <card number="2" name="Bane of Bala Ged"/>
+        <card number="2" name="Deceiver of Form"/>
+        <card number="2" name="Endbringer"/>
+    </zone>
+</cockatrice_deck>

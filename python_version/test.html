@@ -1,940 +1,1478 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<html lang="en">
 
 <head>
-    <title>MagicCorporation - Distorsion chaotique (Strixhaven Mystical Archive) - Cartes à l'Unité Magic the Gathering
-    </title>
-    <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=UTF-8">
-    <META HTTP-EQUIV="CONTENT-LANGUAGE" CONTENT="FR">
-    <META NAME="RESOURCE-TYPE" CONTENT="DOCUMENT">
-    <META NAME="DISTRIBUTION" CONTENT="GLOBAL">
-    <META NAME="AUTHOR" CONTENT="TAISNE Jean-Christophe">
-    <META NAME="REPLY-TO" CONTENT="amonra@magiccorporation.com">
-    <META NAME="COPYRIGHT" CONTENT="Copyright (c) 2000-2023">
-    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-    <META NAME="RATING" CONTENT="GENERAL">
-    <META NAME="LANGUAGE" CONTENT="FR">
-    <META NAME="KEYWORDS" LANG="fr" CONTENT="achat, vente, jeu, jouet, cartes, magic">
-    <META NAME="DESCRIPTION" LANG="fr" CONTENT="Vente de cartes Magic the Gathering">
-    <LINK REL="SHORTCUT ICON" HREF="images/favicon.ico">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .addToCart {
+            background: #f86c28;
+            border-radius: 4px;
+            border: 1px solid #f86c28;
+            font-size: 13px;
+            color: white;
+            cursor: pointer;
+            line-height: 24px;
+            display: flex;
+            width: 155px;
+            height: 35px;
+        }
 
-    <link type="text/css" rel="stylesheet" href="includes/libs/css/normalize.css?1526222394">
-    <link type="text/css" rel="stylesheet" href="includes/libs/js/jquery-ui-1.11.1.custom/jquery-ui.css?1492266329">
-    <link type="text/css" rel="stylesheet" href="includes/libs/css/jquery.multiselect.css?1492266329">
-    <link type="text/css" rel="stylesheet" href="includes/libs/css/jquery.multiselect.filter.css?1492266329">
-    <link type="text/css" rel="stylesheet" href="includes/libs/css/style.css?1527337565">
-    <link type="text/css" rel="stylesheet" href="includes/libs/css/port.css?1527337673">
-    <link type="text/css" rel="stylesheet" href="includes/libs/css/paiement.css?1492266329">
-    <link type="text/css" rel="stylesheet" href="includes/libs/css/panier.css?1492266329">
-    <link type="text/css" rel="stylesheet" href="includes/libs/css/header.css?1492266329">
-    <link type="text/css" rel="stylesheet" href="includes/libs/css/footer.css?1492266329">
-    <link type="text/css" rel="stylesheet" href="includes/libs/css/bannieres.css?1492266329">
-    <link type="text/css" rel="stylesheet" href="includes/libs/css/slides/slides.css?1492266329">
-    <link type="text/css" rel="stylesheet" href="includes/libs/css/produit.css?1534455427">
-    <link type="text/css" rel="stylesheet" href="includes/libs/css/search.css?1492266329">
-    <link type="text/css" rel="stylesheet" href="includes/libs/css/thumbnail.css?1492266329">
+        .add_cart_btn_img {
+            background: url('/img/style/full-ico.png?v=16') -14px -66px;
+            width: 20px;
+            height: 18px;
+            margin-right: 6px;
+        }
 
-    <link type="text/css" rel="stylesheet" href="site/magiccorporation/libs/css/style.css?1522677883">
-    <link type="text/css" rel="stylesheet" href="site/magiccorporation/libs/css/header.css?1576145799">
-    <link type="text/css" rel="stylesheet" href="site/magiccorporation/libs/css/footer.css?1525737514">
-    <link type="text/css" rel="stylesheet" href="site/magiccorporation/libs/css/tab.css?1492282318">
-    <link type="text/css" rel="stylesheet" href="site/magiccorporation/libs/css/produit.css?1528932002">
-    <link type="text/css" rel="stylesheet" href="site/magiccorporation/libs/css/port.css?1492282332">
+        .deck {
+            margin-left: 8px;
+            margin-top: 8px;
+        }
 
-    <script type="text/javascript" src="includes/libs/js/jquery-ui-1.11.1.custom/external/jquery/jquery.js"></script>
-    <script type="text/javascript" src="includes/libs/js/jquery-ui-1.11.1.custom/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="includes/libs/js/jquery.ui.touch-punch.min.js"></script>
-    <script type="text/javascript" src="includes/libs/js/formulaire.js"></script>
-    <script type="text/javascript" src="includes/libs/js/swfobject.js"></script>
-    <script type="text/javascript" src="includes/libs/js/images.js"></script>
-    <script type="text/javascript" src="includes/libs/js/thumbnailviewer2.js"></script>
-    <script type="text/javascript" src="includes/libs/js/highslide/highslide.js"></script>
-    <script type="text/javascript" src="includes/libs/js/fig.js"></script>
-    <script type="text/javascript" src="includes/libs/js/slides.min.jquery.js"></script>
-    <script type="text/javascript" src="includes/libs/js/thumbnail.js?1492266329"></script>
-    <script type="text/javascript" src="includes/libs/js/paiement.js?1492266329"></script>
-    <script type="text/javascript" src="includes/libs/js/port.js?1492266329"></script>
-    <script type="text/javascript" src="includes/libs/js/search.js?1492266329"></script>
-    <!--[if lt ie 9]>
-    <script type="text/javascript" src="libs/js/html5.js"></script>
-<![endif]-->
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92652339-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'UA-92652339-2');
-        gtag('config', 'AW-1072492540');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-KZFJM86');</script>
-    <!-- End Google Tag Manager -->
-
+        .popover {
+            max-width: 30%;
+        }
+    </style>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZFJM86" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <header style="height: 50px;">
-        <div class="container screen">
-            <div class="row">
-                <!-- logo -->
-                <div class="logo">
-                    <a href="./" title=""><img src="site/magiccorporation/images/logo.png" border="0"
-                            style="height: 100px" /></a>
+<body>
+    <div class="deck">
+        <p>TOTAL : <span class="badge">100</span> Cartes</p>
+        <p>
+            MAIN DECK :
+            <span class="badge">100</span> Cartes |
+            <span class="badge">37</span> Terrains |
+            <span class="badge">15</span> Créatures |
+            <span class="badge">31</span> Éphémères / Rituels |
+            <span class="badge">17</span> Autres
+        </p>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/603-30-Catacombes de Sombreau" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/603_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Catacombes de Sombreau" data-html="true"
+                    data-content="&lt;img src='/img/symbole/mana/1.png' loading='lazy'&gt;, &lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/u.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt;.">
                 </div>
-
-                <!-- mon compte -->
-                <div class="icones" style="width: 130px;text-align: center;">
-                    <a href="moncompte.php"
-                        style="font-family: icon;font-size: 65px;text-decoration: none;color: #f9f9f9">/</a><br /><a
-                        href="moncompte.php" style="font-size: 14px; color: #f9f9f9;text-decoration: none">Mon
-                        Compte</a>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Catacombes de Sombreau</td>
+                            <td></td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="icones" style="width: 130px;text-align: center;">
-                    <a href="monpanier.php"
-                        style="font-family: icon;font-size: 65px;text-decoration: none;color: #f9f9f9">,</a><br /><a
-                        href="monpanier.php" style="font-size: 14px; color: #f9f9f9;text-decoration: none">Mon
-                        Panier<br /> € (+ €)</a>
-                </div>
-
-                <!-- recherche -->
-                <div class="recherche">
-                    <form class="searchform" method="GET" action="magic.php" ENCTYPE="application/x-www-form-urlencode">
-                        <input type="text" name="text" placeholder="Rechercher un produit..." autofocus />
-                        <input type="submit" name="submit" value="Ok"
-                            style="    height: 40px;width: 40px;    font-size: 16px;" />
-                    </form>
-                </div>
-
-                <div style="clear: both"></div>
-            </div>
+            </a>
         </div>
-        <div class="container mobile" style="position: fixed;top: 0px;height: 50px;z-index: 100000;">
-            <div class="row">
-                <!-- navbar mobile -->
-                <div class="navbar_mobile" style="position: absolute;">
-                    <div class="navbar_mobile_container">
-                        <div id="navbar_mobile_menuToggle">
-                            <input type="checkbox" name="menu" />
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <ul id="navbar_mobile_menu">
-                                <li>
-                                    <!-- recherche -->
-                                    <div>
-                                        <form class="searchform" method="GET" action="magic.php"
-                                            ENCTYPE="application/x-www-form-urlencode">
-                                            <input type="text" name="text" placeholder="Rechercher..."
-                                                style="font-size: 18px; width: 130px" />
-                                            <input type="submit" name="submit" value="Ok"
-                                                style="height: 30px;width: 40px; font-size: 16px;" />
-                                        </form>
-                                    </div>
-                                </li>
-                                <li style=""><a href="magic.php">Cartes à l'unité par Editions</a></li>
-                                <li style=""><a href="jeu-1-magic.html">Produits Magic The Gathering</a></li>
-                                <li style=""><a href="cat-4-accessoires.html">Accessoires</a></li>
-                                <li style=""><a href="promotions.php">Promotions</a></li>
-                                <!--<li style=""><a href="cat.php?nom_promo=Soldes">Soldes</a></li>-->
-                                <!--<li style=""><a href="cat.php?nom_promo=Soldes" style="color: yellow">Soldes !!!</a></li>-->
-                                <li style=""><a href="http://animation.magiccorporation.com"
-                                        target="_blank">Tournois</a></li>
-                                <li style=""><a href="http://rachat.magiccorporation.com" target="_blank">Rachats</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/7348-30-Contreforts d'Ombresang" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/7348_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Contreforts d'Ombresang" data-html="true"
+                    data-content="&lt;img src='/img/symbole/mana/1.png' loading='lazy'&gt;, &lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/r.png' loading='lazy'&gt;.">
                 </div>
-                <style type="text/css">
-                    .navbar_mobile_container {
-                        /*              margin-top: 50px; */
-                        /*              Display: flex;*/
-                        justify-content: center;
-                        align-items: center;
-                    }
-
-                    #navbar_mobile_menuToggle {
-                        display: flex;
-                        flex-direction: column;
-                        position: relative;
-                        top: 15px;
-                        left: 20px;
-                        z-index: 1;
-                        -webkit-user-select: none;
-                        user-select: none;
-                    }
-
-                    #navbar_mobile_menuToggle input[name="menu"] {
-                        display: flex;
-                        width: 40px;
-                        height: 32px;
-                        position: absolute;
-                        cursor: pointer;
-                        opacity: 0;
-                        z-index: 2;
-                    }
-
-                    #navbar_mobile_menuToggle span {
-                        display: flex;
-                        width: 29px;
-                        height: 2px;
-                        margin-bottom: 5px;
-                        position: relative;
-                        background: #ffffff;
-                        border-radius: 3px;
-                        z-index: 1;
-                        transform-origin: 5px 0px;
-                        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-                            background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-                            opacity 0.55s ease;
-                    }
-
-                    #navbar_mobile_menuToggle span:first-child {
-                        transform-origin: 0% 0%;
-                    }
-
-                    #navbar_mobile_menuToggle span:nth-last-child(2) {
-                        transform-origin: 0% 100%;
-                    }
-
-                    #navbar_mobile_menuToggle input:checked~span {
-                        opacity: 1;
-                        transform: rotate(45deg) translate(-3px, -1px);
-                        background: #36383F;
-                    }
-
-                    #navbar_mobile_menuToggle input:checked~span:nth-last-child(3) {
-                        opacity: 0;
-                        transform: rotate(0deg) scale(0.2, 0.2);
-                    }
-
-                    #navbar_mobile_menuToggle input:checked~span:nth-last-child(2) {
-                        transform: rotate(-45deg) translate(0, -1px);
-                    }
-
-                    #navbar_mobile_menu {
-                        position: absolute;
-                        width: 220px;
-                        height: 400px;
-                        box-shadow: 0 0 10px #85888C;
-                        margin: -50px 0 0 -50px;
-                        padding: 50px;
-                        padding-top: 125px;
-                        background-color: #F5F6FA;
-                        -webkit-font-smoothing: antialiased;
-                        transform-origin: 0% 0%;
-                        transform: translate(-100%, 0);
-                        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-                    }
-
-                    #navbar_mobile_menu li {
-                        padding: 10px 0;
-                        transition-delay: 2s;
-                    }
-
-                    #navbar_mobile_menuToggle input:checked~ul {
-                        transform: none;
-                    }
-                </style>
-
-                <!-- logo -->
-                <div class="logo" style="">
-                    <a href="./" title=""><img src="site/magiccorporation/images/logo.png" /></a>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Contreforts d'Ombresang</td>
+                            <td></td>
+                        </tr>
+                    </table>
                 </div>
-
-                <div class="button_left profil"><a href="moncompte.php" style="font-family: icon;">/</a></div>
-                <div class="button_left basket"><a href="monpanier.php" style="font-family: icon;">,</a></div>
-
-                <div style="clear: both"></div>
-            </div>
+            </a>
         </div>
-        <div class="container screen menu">
-            <ul id="menu">
-                <li style="margin-left: 10px; width: 19%;"><a href="magic.php">Cartes à l'unité</a></li>
-                <li style="text-align: center; width: 19%;"><a href="jeu-1-magic.html">Produits Scellés</a></li>
-                <li style="text-align: center; width: 17%;"><a href="cat-4-accessoires.html">Accessoires</a></li>
-                <li style="text-align: center; width: 17%;"><a href="promotions.php">Promotions</a></li>
-                <!--<li style="text-align: center; width: 17%;"><a href="cat.php?nom_promo=Soldes" style="color: yellow"">Soldes</a></li>-->
-                <li style="text-align: center; width: 17%;"><a href="http://animation.magiccorporation.com"
-                        target="_blank">Tournois</a></li>
-                <li style="text-align: right; width: 5%;"><a href="http://rachat.magiccorporation.com"
-                        target="_blank">Rachats</a></li>
-            </ul>
-            <style>
-                /* Main menu */
-
-                #menu {
-                    width: 100%;
-                    margin: 0;
-                    padding: 10px 0 0 0;
-                    list-style: none;
-                    width: 1440px;
-                    max-width: 100%;
-                    margin: 0px auto;
-                }
-
-                #menu li {
-                    float: left;
-                    padding: 0 0 10px 0;
-                    position: relative;
-                    line-height: 0;
-                }
-
-                #menu a {
-                    float: left;
-                    height: 25px;
-                    /*    padding: 0 40px;*/
-                    color: #e6f0f5;
-                    text-transform: uppercase;
-                    font: bold 15px/25px Arial, Helvetica;
-                    text-decoration: none;
-                    text-shadow: 0 1px 0 #1976a5;
-                }
-
-                #menu li:hover>a {
-                    color: #fafafa;
-                }
-
-                *html #menu li a:hover
-
-                /* IE6 */
-                    {
-                    color: #fafafa;
-                }
-
-                #menu li:hover>ul {
-                    display: block;
-                }
-
-                /* Sub-menu */
-
-                #menu ul {
-                    list-style: none;
-                    margin: 0;
-                    padding: 0;
-                    display: none;
-                    position: absolute;
-                    top: 35px;
-                    left: 0;
-                    z-index: 99999;
-                    background: #1976a5;
-                    background: -moz-linear-gradient(#aecedf, #006192);
-                    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #006192), color-stop(1, #aecedf));
-                    background: -webkit-linear-gradient(#aecedf, #006192);
-                    background: -o-linear-gradient(#aecedf, #006192);
-                    background: -ms-linear-gradient(#aecedf, #006192);
-                    background: linear-gradient(#aecedf, #006192);
-                    -moz-box-shadow: 0 0 2px rgba(255, 255, 255, .5);
-                    -webkit-box-shadow: 0 0 2px rgba(255, 255, 255, .5);
-                    box-shadow: 0 0 2px rgba(255, 255, 255, .5);
-                    -moz-border-radius: 5px;
-                    border-radius: 5px;
-                }
-
-                #menu ul ul {
-                    top: 0;
-                    left: 150px;
-                }
-
-                #menu ul li {
-                    float: none;
-                    margin: 0;
-                    padding: 0;
-                    display: block;
-                    /*    -moz-box-shadow: 0 1px 0 #0e6a98, 0 2px 0 #006192;
-    -webkit-box-shadow: 0 1px 0 #0e6a98, 0 2px 0 #006192;
-    box-shadow: 0 1px 0 #0e6a98, 0 2px 0 #006192;*/
-                }
-
-                #menu ul li:last-child {
-                    -moz-box-shadow: none;
-                    -webkit-box-shadow: none;
-                    box-shadow: none;
-                }
-
-                #menu ul a {
-                    padding: 10px;
-                    height: 10px;
-                    width: 140px;
-                    height: auto;
-                    line-height: 1;
-                    display: block;
-                    white-space: nowrap;
-                    float: none;
-                    text-transform: none;
-                }
-
-                *html #menu ul a
-
-                /* IE6 */
-                    {
-                    height: 10px;
-                }
-
-                *:first-child+html #menu ul a
-
-                /* IE7 */
-                    {
-                    height: 10px;
-                }
-
-                #menu ul a:hover {
-                    background: #0186ba;
-                    background: -moz-linear-gradient(#04acec, #0186ba);
-                    background: -webkit-gradient(linear, left top, left bottom, from(#04acec), to(#0186ba));
-                    background: -webkit-linear-gradient(#04acec, #0186ba);
-                    background: -o-linear-gradient(#04acec, #0186ba);
-                    background: -ms-linear-gradient(#04acec, #0186ba);
-                    background: linear-gradient(#04acec, #0186ba);
-                }
-
-                #menu ul li:first-child>a {
-                    -moz-border-radius: 5px 5px 0 0;
-                    border-radius: 5px 5px 0 0;
-                }
-
-                #menu ul li:first-child>a:after {
-                    content: '';
-                    position: absolute;
-                    left: 30px;
-                    top: -8px;
-                    width: 0;
-                    height: 0;
-                    border-left: 5px solid transparent;
-                    border-right: 5px solid transparent;
-                    border-bottom: 8px solid #444;
-                }
-
-                #menu ul ul li:first-child a:after {
-                    left: -8px;
-                    top: 12px;
-                    width: 0;
-                    height: 0;
-                    border-left: 0;
-                    border-bottom: 5px solid transparent;
-                    border-top: 5px solid transparent;
-                    border-right: 8px solid #444;
-                }
-
-                #menu ul li:first-child a:hover:after {
-                    border-bottom-color: #04acec;
-                }
-
-                #menu ul ul li:first-child a:hover:after {
-                    border-right-color: #04acec;
-                    border-bottom-color: transparent;
-                }
-
-
-                #menu ul li:last-child>a {
-                    -moz-border-radius: 0 0 5px 5px;
-                    border-radius: 0 0 5px 5px;
-                }
-
-                /* Clear floated elements */
-                #menu:after {
-                    visibility: hidden;
-                    display: block;
-                    font-size: 0;
-                    content: " ";
-                    clear: both;
-                    height: 0;
-                }
-
-                * html #menu {
-                    zoom: 1;
-                }
-
-                /* IE6 */
-                *:first-child+html #menu {
-                    zoom: 1;
-                }
-
-                /* IE7 */
-
-                .tab-content-1,
-                .tab-content-2,
-                .tab-content-3,
-                .tab-content-4 {
-                    min-height: 270px;
-                }
-            </style>
-
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/9976-1072-Île" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/9976_fat.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Île" data-html="true" data-content="">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>7 x</span> Île</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
         </div>
-    </header>
-    <div id="body">
-        <div style="clear: both"></div>
-        <!--
-    <p style="
-    text-align: center; 
-    font-size: 15px;
-    color: white;
-    border-radius: 10px;
-    padding: 12px;
-    background: green;">Covid-19 : Les livraisons continuent durant le confinement pour une livraison à domicile en Colissimo 48h, TNT en 24h ou par Coursier en 2h pour les Parisiens.<br />Magasin ouvert de 13h à 18h du Lundi au Samedi.</p>
--->
-        <style>
-            table td {
-                padding: 5px;
-                ;
-            }
-
-            .ariane {
-                margin: 10px;
-            }
-
-            p.logo_jeu img {
-                width: 300px;
-            }
-
-            p.logo_jeu {
-                text-align: center;
-            }
-
-            div.scan,
-            div.container_info {
-                float: left;
-            }
-
-            div.container_carte {
-                width: 100%;
-            }
-
-            div.scan {
-                width: 30%;
-            }
-
-            div.scan img#scan_magic {
-                padding: 15px;
-            }
-
-            div.container_info {
-                width: 70%;
-            }
-
-            div.row_left {
-                float: left;
-                width: 40%;
-            }
-
-            div.row_right {
-                float: left;
-                width: 60%;
-            }
-
-            div.row_left>div,
-            div.row_right>div {
-                padding: 10px;
-            }
-
-            div.texte_vf p,
-            div.texte_vo p {
-                margin: 10px;
-            }
-        </style>
-        <nav itemprop="breadcrumb" class="ariane"><a href="cat-1-jeux-de-cartes.html" title="Jeux de Cartes">Jeux de
-                Cartes</a> &gt; <a href="cat-1-4-jeux-de-cartes-magic.html" title="Magic The Gathering">Magic The
-                Gathering</a> &gt; <a href="cartes-a-lunite-magic.html"
-                title="Cartes à l'unité Magic The Gathering">Cartes à l'unité</a> &gt; <a
-                href="cartes-magic-edition-257-strixhaven-mystical-archive.html"
-                title="Strixhaven Mystical Archive Cartes à l'unité Magic The Gathering">Strixhaven Mystical Archive</a>
-        </nav>
-        <p class="logo_jeu"><a href="cartes-a-lunite-magic.html"><img src="images/jeu/1.png"></a></p>
-        <div class="jump_page" style="float: left;"><a href="carte-magic-60231-rites-du-village.html">
-                << 35. Rites du village <img src="images/magic/manas/micro/b.png" border="0" align="absmiddle" alt=""
-                    title="" />
-            </a></div>
-        <div class="jump_page" style="float: right;"><a href="carte-magic-60233-droit-au-premier-ne.html"><img
-                    src="images/magic/manas/micro/r.png" border="0" align="absmiddle" alt="" title="" /> Droit au
-                premier né 37. >></a></div>
-        <div style="clear: both;"></div>
-        <h1>Distorsion chaotique (Chaos Warp) <img src="images/magic/manas/maxi/2.png" border="0" align="absmiddle"
-                alt="" title="" /><img src="images/magic/manas/maxi/r.png" border="0" align="absmiddle" alt=""
-                title="" /> <a href="cartes-magic-edition-257-strixhaven-mystical-archive.html"><img
-                    src="images/magic/editions/maxi/strixhaven_mystical_archive.png"
-                    style="height: 50px;vertical-align: middle;"></a></h1>
-        <div class="container_carte bloc">
-            <div class="scan bloc"><img src="scan.php?num=60232" id="scan_magic">
-                <p style="text-align: center;">Visuel de la carte : <a href="#" style="vertical-align: middle;"><img
-                            src="images/lang/vo.gif"></a> <a href="#" style="vertical-align: middle;"><img
-                            src="images/lang/vf.gif"></a></p>
-                <p style="text-align: center;"><a
-                        href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Chaos+Warp" target="_blank"><img
-                            src="images/magic/autres/logo_m.png"
-                            style="margin: 0px; padding:0px; height: 15px; margin-right: 3px; vertical-align: middle;">Lien
-                        Gatherer</a></p>
-                <div class="block" style="margin-top: 10px; margin-bottom: 10px;">
-                    <div class="block_share_page">
-                        <div class="block_content">
-                            <div id="twitter-root" style="float: left; margin-left: 5px;margin-right: 5px;"><a
-                                    href="https://twitter.com/share" class="twitter-share-button"
-                                    data-lang="fr">Tweeter</a>
-                                <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
-                            </div>
-                            <div id="fb-root"></div>
-                            <script>(function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
-                            <div style="float: left;" class="fb-like" data-send="true" data-layout="button_count"
-                                data-width="450" data-show-faces="true"></div>
-                            <div id="gplus-root" style="float: left; margin-left: 5px;">
-                                <div class="g-plusone" data-size="medium"></div>
-                                <script
-                                    type="text/javascript">window.___gcfg = { lang: 'fr' }; (function () { var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = 'https://apis.google.com/js/plusone.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();</script>
-                            </div>
-                            <div class="html_div_clear"></div>
-                            <div style="clear: both"></div>
-                        </div>
-                    </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/9980-1072-Marais" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/9980_fat.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Marais" data-html="true" data-content="">
                 </div>
-            </div>
-            <div class="container_info bloc">
-                <div class="row_left bloc">
-                    <div class="infos">
-                        <div class="main_bloc_article"><span class="main_bloc_article_titre">Infos</span>
-                            <ul>
-                                <li>Edition : <a
-                                        href="cartes-magic-edition-257-strixhaven-mystical-archive.html">Strixhaven
-                                        Mystical Archive</a></li>
-                                <li>Rareté : Rare Mythique</li>
-                                <li>Illustrateur : <a href="cartes-magic-illustrateur--.html"></a></li>
-                                <li>Date de sortie : 23/04/2021</li>
-                                <li>Id : 36/63</li>
-                        </div>
-                    </div>
-                    <div class="texte_vf">
-                        <div class="main_bloc_article"><span class="main_bloc_article_titre">Texte VF</span>
-                            <p><b>Distorsion chaotique</b> <img src="images/magic/manas/mini/2.png" border="0"
-                                    align="absmiddle" alt="" title="" /><img src="images/magic/manas/mini/r.png"
-                                    border="0" align="absmiddle" alt="" title="" /></p>
-                            <p style="color: gray;">Éphémère</p>
-                            <p>Le propriétaire du permanent ciblé le mélange à sa bibliothèque, puis révèle la carte du
-                                dessus de sa bibliothèque. Si c&#039;est une carte de permanent, il la met sur le champ
-                                de bataille.</p>
-                        </div>
-                    </div>
-                    <div class="texte_vo">
-                        <div class="main_bloc_article"><span class="main_bloc_article_titre">Texte VO</span>
-                            <p><b>Chaos Warp</b> <img src="images/magic/manas/mini/2.png" border="0" align="absmiddle"
-                                    alt="" title="" /><img src="images/magic/manas/mini/r.png" border="0"
-                                    align="absmiddle" alt="" title="" /></p>
-                            <p style="color: gray;">Instant</p>
-                            <p>The owner of target permanent shuffles it into their library, then reveals the top card
-                                of their library. If it&#039;s a permanent card, they put it onto the battlefield.</p>
-                        </div>
-                    </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>6 x</span> Marais</td>
+                            <td></td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="row_right bloc">
-                    <div class="dispo">
-                        <div class="main_bloc_article"><span class="main_bloc_article_titre">Disponibilités :</span>
-                            <table width='100%'>
-                                <form id="ajout_6_71399" method="POST" action="danspanier.php" name="danspanier"><input
-                                        type="hidden" name="genre" value="6"><input type="hidden" name="num_produit"
-                                        value="71399">
-                                    <tr style="background-color: #f1f1f1; border-top: 1px solid #72a9c5;;"
-                                        onmouseover="JavaScript:this.style.backgroundColor='#FFFFFF';"
-                                        onmouseout="JavaScript:this.style.backgroundColor='#f1f1f1'">
-                                        <td><a href="carte-magic-71399-distorsion-chaotique.html"><img
-                                                    src="images/magic/editions/sigles/the_brothers_war_commander/r.png"
-                                                    style="margin-right: 3px; width: 20px; vertical-align: middle;">The
-                                                Brothers' War Commander</a></td>
-                                        <td>NM/MT</td>
-                                        <td><img src="images/lang/vf.gif"></td>
-                                        <td align=right style="color: green; font-weight: bold;">1.90 €</td>
-                                        <td align=right><select name=quantite
-                                                onchange="JavaScript:if(this.value!='x'){ document.getElementById('ajout_6_71399').submit(); }">
-                                                <option>-</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                        </td>
-                                    </tr>
-                                </form>
-                                <form id="ajout_5_70131" method="POST" action="danspanier.php" name="danspanier"><input
-                                        type="hidden" name="genre" value="5"><input type="hidden" name="num_produit"
-                                        value="70131">
-                                    <tr style="background-color: #f1f1f1; border-top: 1px solid #72a9c5;;"
-                                        onmouseover="JavaScript:this.style.backgroundColor='#FFFFFF';"
-                                        onmouseout="JavaScript:this.style.backgroundColor='#f1f1f1'">
-                                        <td><a href="carte-magic-70131-distorsion-chaotique.html"><img
-                                                    src="images/magic/editions/sigles/univers_infinis_deck_commander_warhammer_40000/r.png"
-                                                    style="margin-right: 3px; width: 20px; vertical-align: middle;">Univers
-                                                infinis Deck Commander Warhammer 40,000</a></td>
-                                        <td>NM/MT</td>
-                                        <td><img src="images/lang/vo.gif"></td>
-                                        <td align=right style="color: green; font-weight: bold;">1.50 €</td>
-                                        <td align=right><select name=quantite
-                                                onchange="JavaScript:if(this.value!='x'){ document.getElementById('ajout_5_70131').submit(); }">
-                                                <option>-</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                        </td>
-                                    </tr>
-                                </form>
-                                <form id="ajout_6_68635" method="POST" action="danspanier.php" name="danspanier"><input
-                                        type="hidden" name="genre" value="6"><input type="hidden" name="num_produit"
-                                        value="68635">
-                                    <tr style="background-color: #f1f1f1; border-top: 1px solid #72a9c5;;"
-                                        onmouseover="JavaScript:this.style.backgroundColor='#FFFFFF';"
-                                        onmouseout="JavaScript:this.style.backgroundColor='#f1f1f1'">
-                                        <td><a href="carte-magic-68635-distorsion-chaotique.html"><img
-                                                    src="images/magic/editions/sigles/double_masters_2022/r.png"
-                                                    style="margin-right: 3px; width: 20px; vertical-align: middle;">Double
-                                                Masters 2022</a></td>
-                                        <td>NM/MT</td>
-                                        <td><img src="images/lang/vf.gif"></td>
-                                        <td align=right style="color: green; font-weight: bold;">1.00 €</td>
-                                        <td align=right><select name=quantite
-                                                onchange="JavaScript:if(this.value!='x'){ document.getElementById('ajout_6_68635').submit(); }">
-                                                <option>-</option>
-                                                <option>1</option>
-                                        </td>
-                                    </tr>
-                                </form>
-                                <form id="ajout_5_68889" method="POST" action="danspanier.php" name="danspanier"><input
-                                        type="hidden" name="genre" value="5"><input type="hidden" name="num_produit"
-                                        value="68889">
-                                    <tr style="background-color: #f1f1f1; border-top: 1px solid #72a9c5;;"
-                                        onmouseover="JavaScript:this.style.backgroundColor='#FFFFFF';"
-                                        onmouseout="JavaScript:this.style.backgroundColor='#f1f1f1'">
-                                        <td><a href="carte-magic-68889-distorsion-chaotique.html"><img
-                                                    src="images/magic/editions/sigles/double_masters_2022/r.png"
-                                                    style="margin-right: 3px; width: 20px; vertical-align: middle;">Double
-                                                Masters 2022</a></td>
-                                        <td>NM/MT</td>
-                                        <td><img src="images/lang/vo.gif"></td>
-                                        <td align=right style="color: green; font-weight: bold;">5.90 €</td>
-                                        <td align=right><select name=quantite
-                                                onchange="JavaScript:if(this.value!='x'){ document.getElementById('ajout_5_68889').submit(); }">
-                                                <option>-</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                        </td>
-                                    </tr>
-                                </form>
-                                <form id="ajout_6_68889" method="POST" action="danspanier.php" name="danspanier"><input
-                                        type="hidden" name="genre" value="6"><input type="hidden" name="num_produit"
-                                        value="68889">
-                                    <tr style="background-color: #f1f1f1; ;"
-                                        onmouseover="JavaScript:this.style.backgroundColor='#FFFFFF';"
-                                        onmouseout="JavaScript:this.style.backgroundColor='#f1f1f1'">
-                                        <td><a href="carte-magic-68889-distorsion-chaotique.html"><img
-                                                    src="images/magic/editions/sigles/double_masters_2022/r.png"
-                                                    style="margin-right: 3px; width: 20px; vertical-align: middle;">Double
-                                                Masters 2022</a></td>
-                                        <td>NM/MT</td>
-                                        <td><img src="images/lang/vf.gif"></td>
-                                        <td align=right style="color: green; font-weight: bold;">5.90 €</td>
-                                        <td align=right><select name=quantite
-                                                onchange="JavaScript:if(this.value!='x'){ document.getElementById('ajout_6_68889').submit(); }">
-                                                <option>-</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                        </td>
-                                    </tr>
-                                </form>
-                                <form id="ajout_6_67327" method="POST" action="danspanier.php" name="danspanier"><input
-                                        type="hidden" name="genre" value="6"><input type="hidden" name="num_produit"
-                                        value="67327">
-                                    <tr style="background-color: #f1f1f1; border-top: 1px solid #72a9c5;;"
-                                        onmouseover="JavaScript:this.style.backgroundColor='#FFFFFF';"
-                                        onmouseout="JavaScript:this.style.backgroundColor='#f1f1f1'">
-                                        <td><a href="carte-magic-67327-distorsion-chaotique.html"><img
-                                                    src="images/magic/editions/sigles/commander_legends_battle_for_baldurs_gate/r.png"
-                                                    style="margin-right: 3px; width: 20px; vertical-align: middle;">Commander
-                                                Legends: Battle for Baldur's Gate</a></td>
-                                        <td>NM/MT</td>
-                                        <td><img src="images/lang/vf.gif"></td>
-                                        <td align=right style="color: green; font-weight: bold;">2.00 €</td>
-                                        <td align=right><select name=quantite
-                                                onchange="JavaScript:if(this.value!='x'){ document.getElementById('ajout_6_67327').submit(); }">
-                                                <option>-</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                        </td>
-                                    </tr>
-                                </form>
-                                <form id="ajout_6_66318" method="POST" action="danspanier.php" name="danspanier"><input
-                                        type="hidden" name="genre" value="6"><input type="hidden" name="num_produit"
-                                        value="66318">
-                                    <tr style="background-color: #f1f1f1; border-top: 1px solid #72a9c5;;"
-                                        onmouseover="JavaScript:this.style.backgroundColor='#FFFFFF';"
-                                        onmouseout="JavaScript:this.style.backgroundColor='#f1f1f1'">
-                                        <td><a href="carte-magic-66318-distorsion-chaotique.html"><img
-                                                    src="images/magic/editions/sigles/streets_of_new_capenna_commander/r.png"
-                                                    style="margin-right: 3px; width: 20px; vertical-align: middle;">Streets
-                                                of New Capenna : Commander</a></td>
-                                        <td>NM/MT</td>
-                                        <td><img src="images/lang/vf.gif"></td>
-                                        <td align=right style="color: green; font-weight: bold;">1.50 €</td>
-                                        <td align=right><select name=quantite
-                                                onchange="JavaScript:if(this.value!='x'){ document.getElementById('ajout_6_66318').submit(); }">
-                                                <option>-</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                        </td>
-                                    </tr>
-                                </form>
-                                <form id="ajout_6_64760" method="POST" action="danspanier.php" name="danspanier"><input
-                                        type="hidden" name="genre" value="6"><input type="hidden" name="num_produit"
-                                        value="64760">
-                                    <tr style="background-color: #f1f1f1; border-top: 1px solid #72a9c5;;"
-                                        onmouseover="JavaScript:this.style.backgroundColor='#FFFFFF';"
-                                        onmouseout="JavaScript:this.style.backgroundColor='#f1f1f1'">
-                                        <td><a href="carte-magic-64760-distorsion-chaotique.html"><img
-                                                    src="images/magic/editions/sigles/kamigawa_neon_dynasty_commander/r.png"
-                                                    style="margin-right: 3px; width: 20px; vertical-align: middle;">Kamigawa:
-                                                Neon Dynasty Commander</a></td>
-                                        <td>NM/MT</td>
-                                        <td><img src="images/lang/vf.gif"></td>
-                                        <td align=right style="color: green; font-weight: bold;">1.90 €</td>
-                                        <td align=right><select name=quantite
-                                                onchange="JavaScript:if(this.value!='x'){ document.getElementById('ajout_6_64760').submit(); }">
-                                                <option>-</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                        </td>
-                                    </tr>
-                                </form>
-                                <form id="ajout_9_18733" method="POST" action="danspanier.php" name="danspanier"><input
-                                        type="hidden" name="genre" value="9"><input type="hidden" name="num_produit"
-                                        value="18733">
-                                    <tr style="background-color: #f1f1f1; border-top: 1px solid #72a9c5;"
-                                        onmouseover="JavaScript:this.style.backgroundColor='#FFFFFF';"
-                                        onmouseout="JavaScript:this.style.backgroundColor='#f1f1f1'">
-                                        <td><a href="carte-magic-60232-distorsion-chaotique.html"><img
-                                                    src="images/magic/editions/sigles/strixhaven_mystical_archive/m.png"
-                                                    style="margin-right: 3px; width: 20px; vertical-align: middle;">Strixhaven
-                                                Mystical Archive</a></td>
-                                        <td>NM <span class="thumbnail"><a
-                                                    href="images/produits/cartes/recto/maxi/18733.jpg"><img
-                                                        src="includes/images/icons/zoom_in.png"
-                                                        onmouseover="thumbnail('scan_recto_18733', 'images/produits/cartes/recto/normal/18733.jpg')"></a><span
-                                                    id="scan_recto_18733"></span></span></td>
-                                        <td><img src="images/lang/vf.gif"></td>
-                                        <td align=right style="color: green; font-weight: bold;">7.90 €</td>
-                                        <td align=right><select name=quantite
-                                                onchange="JavaScript:if(this.value!='x'){ document.getElementById('ajout_9_18733').submit(); }">
-                                                <option>-</option>
-                                                <option>1</option>
-                                        </td>
-                                    </tr>
-                                </form>
-                                <form id="ajout_6_43359" method="POST" action="danspanier.php" name="danspanier"><input
-                                        type="hidden" name="genre" value="6"><input type="hidden" name="num_produit"
-                                        value="43359">
-                                    <tr style="background-color: #f1f1f1; border-top: 1px solid #72a9c5;;"
-                                        onmouseover="JavaScript:this.style.backgroundColor='#FFFFFF';"
-                                        onmouseout="JavaScript:this.style.backgroundColor='#f1f1f1'">
-                                        <td><a href="carte-magic-43359-distorsion-chaotique.html"><img
-                                                    src="images/magic/editions/sigles/commander_2019/r.png"
-                                                    style="margin-right: 3px; width: 20px; vertical-align: middle;">Commander
-                                                2019</a></td>
-                                        <td>NM/MT</td>
-                                        <td><img src="images/lang/vf.gif"></td>
-                                        <td align=right style="color: green; font-weight: bold;">1.00 €</td>
-                                        <td align=right><select name=quantite
-                                                onchange="JavaScript:if(this.value!='x'){ document.getElementById('ajout_6_43359').submit(); }">
-                                                <option>-</option>
-                                                <option>1</option>
-                                        </td>
-                                    </tr>
-                                </form>
-                                <form id="ajout_5_40703" method="POST" action="danspanier.php" name="danspanier"><input
-                                        type="hidden" name="genre" value="5"><input type="hidden" name="num_produit"
-                                        value="40703">
-                                    <tr style="background-color: #f1f1f1; border-top: 1px solid #72a9c5;;"
-                                        onmouseover="JavaScript:this.style.backgroundColor='#FFFFFF';"
-                                        onmouseout="JavaScript:this.style.backgroundColor='#f1f1f1'">
-                                        <td><a href="carte-magic-40703-distorsion-chaotique.html"><img
-                                                    src="images/magic/editions/sigles/commander_2018/r.png"
-                                                    style="margin-right: 3px; width: 20px; vertical-align: middle;">Commander
-                                                2018</a></td>
-                                        <td>NM/MT</td>
-                                        <td><img src="images/lang/vo.gif"></td>
-                                        <td align=right style="color: green; font-weight: bold;">1.00 €</td>
-                                        <td align=right><select name=quantite
-                                                onchange="JavaScript:if(this.value!='x'){ document.getElementById('ajout_5_40703').submit(); }">
-                                                <option>-</option>
-                                                <option>1</option>
-                                        </td>
-                                    </tr>
-                                </form>
-                                <form id="ajout_6_33884" method="POST" action="danspanier.php" name="danspanier"><input
-                                        type="hidden" name="genre" value="6"><input type="hidden" name="num_produit"
-                                        value="33884">
-                                    <tr style="background-color: #f1f1f1; border-top: 1px solid #72a9c5;;"
-                                        onmouseover="JavaScript:this.style.backgroundColor='#FFFFFF';"
-                                        onmouseout="JavaScript:this.style.backgroundColor='#f1f1f1'">
-                                        <td><a href="carte-magic-33884-distorsion-chaotique.html"><img
-                                                    src="images/magic/editions/sigles/commander_2016/r.png"
-                                                    style="margin-right: 3px; width: 20px; vertical-align: middle;">Commander
-                                                2016</a></td>
-                                        <td>NM/MT</td>
-                                        <td><img src="images/lang/vf.gif"></td>
-                                        <td align=right style="color: green; font-weight: bold;">1.90 €</td>
-                                        <td align=right><select name=quantite
-                                                onchange="JavaScript:if(this.value!='x'){ document.getElementById('ajout_6_33884').submit(); }">
-                                                <option>-</option>
-                                                <option>1</option>
-                                        </td>
-                                    </tr>
-                                </form>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </a>
         </div>
-        <div style="clear: both;"></div>
-        <p style="clear: both"></p>
-        <p style="clear: both"></p>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/10368-1072-Montagne" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/10368_fat.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Montagne" data-html="true" data-content="">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>5 x</span> Montagne</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/10991-167-Saillies de la cascade" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/10991_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Saillies de la cascade" data-html="true"
+                    data-content="&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/).png' loading='lazy'&gt;.
+&lt;img src='/img/symbole/mana/c.png' loading='lazy'&gt;, &lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/u.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/u.png' loading='lazy'&gt;, &lt;img src='/img/symbole/mana/u.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/r.png' loading='lazy'&gt; ou &lt;img src='/img/symbole/mana/r.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/r.png' loading='lazy'&gt;.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Saillies de la cascade</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/11267-169-Nécropole croulante" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/11267_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Nécropole croulante" data-html="true"
+                    data-content="La N&eacute;cropole croulante arrive sur le champ de bataille engag&eacute;e.
+&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/u.png' loading='lazy'&gt;, &lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt; ou &lt;img src='/img/symbole/mana/r.png' loading='lazy'&gt; &agrave; votre r&eacute;serve.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Nécropole croulante</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/11269-169-Panorama de Grixis" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/11269_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Panorama de Grixis" data-html="true"
+                    data-content="&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/).png' loading='lazy'&gt; &agrave; votre r&eacute;serve.
+&lt;img src='/img/symbole/mana/1.png' loading='lazy'&gt;, &lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt;, sacrifiez le Panorama de Grixis : Cherchez dans votre biblioth&egrave;que une carte d'&icirc;le, de marais ou de montagne de base et mettez-la sur le champ de bataille engag&eacute;e. M&eacute;langez ensuite votre biblioth&egrave;que.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Panorama de Grixis</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/11453-172-Verger exotique" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/11453_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Verger exotique" data-html="true"
+                    data-content="&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez un mana de la couleur de votre choix qu'un terrain que votre adversaire contr&ocirc;le pourrait produire.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Verger exotique</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/16160-407-Tour de commandement" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/16160_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Tour de commandement" data-html="true"
+                    data-content="&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &agrave; votre r&eacute;serve un mana de n'importe quelle couleur de l'identit&eacute; couleur de votre commandant.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Tour de commandement</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/18359-228-Temple de la révélation" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/18359_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Temple de la révélation" data-html="true"
+                    data-content="Le Temple de la r&eacute;v&eacute;lation arrive sur le champ de bataille engag&eacute;.
+Quand le Temple de la r&eacute;v&eacute;lation arrive sur le champ de bataille, regard 1.
+&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/u.png' loading='lazy'&gt; ou &lt;img src='/img/symbole/mana/r.png' loading='lazy'&gt;.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Temple de la révélation</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/18967-1052-Paysage myriadaire" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/18967_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Paysage myriadaire" data-html="true"
+                    data-content="Le Paysage myriadaire arrive sur le champ de bataille engag&eacute;.
+&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/).png' loading='lazy'&gt;.
+&lt;img src='/img/symbole/mana/2.png' loading='lazy'&gt;, &lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt;, sacrifiez le Paysage myriadaire : Cherchez dans votre biblioth&egrave;que jusqu'&agrave; deux cartes de terrain de base qui partagent un type de terrain, mettez-les sur le champ de bataille engag&eacute;es, puis m&eacute;langez.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Paysage myriadaire</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/19671-269-Dépression engloutie" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/19671_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Dépression engloutie" data-html="true"
+                    data-content="(&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/u.png' loading='lazy'&gt; ou &lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt;.)
+La D&eacute;pression engloutie arrive sur le champ de bataille engag&eacute;e &agrave; moins que vous ne contr&ocirc;liez au moins deux terrains de base.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Dépression engloutie</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/19672-269-Marécage fumant" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/19672_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Marécage fumant" data-html="true"
+                    data-content="(&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt; ou &lt;img src='/img/symbole/mana/r.png' loading='lazy'&gt;.)
+Le Mar&eacute;cage fumant arrive sur le champ de bataille engag&eacute; &agrave; moins que vous ne contr&ocirc;liez au moins deux terrains de base.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Marécage fumant</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/20274-281-Ruines angoissantes" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/20274_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Ruines angoissantes" data-html="true"
+                    data-content="Au moment o&ugrave; les Ruines angoissantes arrivent sur le champ de bataille, vous pouvez r&eacute;v&eacute;ler une carte de marais ou de montagne de votre main. Si vous ne le faites pas, les Ruines angoissantes arrivent sur le champ de bataille engag&eacute;es.
+&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt; ou &lt;img src='/img/symbole/mana/r.png' loading='lazy'&gt; &agrave; votre r&eacute;serve.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Ruines angoissantes</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/20277-281-Estuaire asphyxié" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/20277_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Estuaire asphyxié" data-html="true"
+                    data-content="Au moment o&ugrave; l'Estuaire asphyxi&eacute; arrive sur le champ de bataille, vous pouvez r&eacute;v&eacute;ler une carte d'&icirc;le ou de marais de votre main. Si vous ne le faites pas, l'Estuaire asphyxi&eacute; arrive sur le champ de bataille engag&eacute;.
+&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/u.png' loading='lazy'&gt; ou &lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt; &agrave; votre r&eacute;serve.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Estuaire asphyxié</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/21254-1052-Landes cendreuses" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/21254_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Landes cendreuses" data-html="true"
+                    data-content="&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/).png' loading='lazy'&gt;.
+Recyclage de terrain de base &lt;img src='/img/symbole/mana/1.png' loading='lazy'&gt; (&lt;img src='/img/symbole/mana/1.png' loading='lazy'&gt;, d&eacute;faussez-vous de cette carte : Cherchez dans votre biblioth&egrave;que une carte de terrain de base, r&eacute;v&eacute;lez-la, mettez-la dans votre main, puis m&eacute;langez votre biblioth&egrave;que.)">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Landes cendreuses</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/22336-1052-Voie de l'Ascendance" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/22336_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Voie de l'Ascendance" data-html="true"
+                    data-content="La Voie de l'Ascendance arrive sur le champ de bataille engag&eacute;e.
+&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez un mana de n'importe quelle couleur de l'identit&eacute; couleur de votre commandant. Quand ce mana est d&eacute;pens&eacute; pour lancer un sort de cr&eacute;ature qui partage un type de cr&eacute;ature avec votre commandant, regard 1.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Voie de l'Ascendance</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/28393-1057-Promontoire prospère" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/28393_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Promontoire prospère" data-html="true"
+                    data-content="Le Promontoire prosp&egrave;re arrive sur le champ de bataille engag&eacute;. Au moment o&ugrave; le Promontoire prosp&egrave;re arrive sur le champ de bataille, choisissez une couleur autre que rouge.
+&lt;img src='/img/symbole/mana/T.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/R.png' loading='lazy'&gt; ou un mana de la couleur choisie.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Promontoire prospère</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/28396-1057-Île prospère" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/28396_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Île prospère" data-html="true"
+                    data-content="L'&Icirc;le prosp&egrave;re arrive sur le champ de bataille engag&eacute;e.
+Au moment o&ugrave; l'&Icirc;le prosp&egrave;re arrive sur le champ de bataille, choisissez une couleur autre que le bleu.
+&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/u.png' loading='lazy'&gt; ou un mana de la couleur choisie.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Île prospère</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/28397-1057-Lande prospère" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/28397_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Lande prospère" data-html="true"
+                    data-content="La Lande prosp&egrave;re arrive sur le champ de bataille engag&eacute;e.
+Au moment o&ugrave; la Lande prosp&egrave;re arrive sur le champ de bataille, choisissez une couleur autre que le noir.
+&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt; ou un mana de la couleur choisie.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Lande prospère</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45533-992-Théâtre des Maestros" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45533_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Théâtre des Maestros" data-html="true"
+                    data-content="Quand le Th&eacute;&acirc;tre des Maestros arrive sur le champ de bataille, sacrifiez-le. Quand vous faites ainsi, cherchez dans votre biblioth&egrave;que une carte d'&icirc;le, de marais ou de montagne de base, mettez-la sur le champ de bataille engag&eacute;e, puis m&eacute;langez et vous gagnez 1 point de vie.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Théâtre des Maestros</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/23094-328-Phénix ravivé" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/23094_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Phénix ravivé" data-html="true"
+                    data-content="Vol
+Quand le Ph&eacute;nix raviv&eacute; meurt, cr&eacute;ez un jeton de cr&eacute;ature 0/1 rouge &Eacute;l&eacute;mental avec &laquo; Au d&eacute;but de votre entretien, sacrifiez cette cr&eacute;ature et renvoyez sur le champ de bataille une carte cibl&eacute;e appel&eacute;e Ph&eacute;nix raviv&eacute; depuis votre cimeti&egrave;re. Elle acquiert la c&eacute;l&eacute;rit&eacute; jusqu'&agrave; la fin du tour &raquo;.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Phénix ravivé</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/23557-333-Skwi, l'immortel" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/23557_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Skwi, l'immortel" data-html="true"
+                    data-content="Vous pouvez lancer Skwi, l'immortel depuis votre cimeti&egrave;re ou depuis l'exil.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Skwi, l'immortel</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45701-1057-Soprano envoûtante" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45701_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Soprano envoûtante" data-html="true"
+                    data-content="&Agrave; chaque fois que la Soprano envo&ucirc;tante attaque, les sorts d'&eacute;ph&eacute;m&egrave;re et de rituel que vous lancez ce tour-ci co&ucirc;tent &lt;img src='/img/symbole/mana/1.png' loading='lazy'&gt; de moins &agrave; lancer.
+Encore &lt;img src='/img/symbole/mana/3.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/R.png' loading='lazy'&gt; (&lt;img src='/img/symbole/mana/3.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/R.png' loading='lazy'&gt;, exilez cette carte de votre cimeti&egrave;re : Pour chaque adversaire, cr&eacute;ez une copie jeton qui attaque cet adversaire ce tour-ci si possible. Elle acquiert la c&eacute;l&eacute;rit&eacute;. Sacrifiez-la au d&eacute;but de la prochaine &eacute;tape de fin. N'activez que lorsque vous pourriez lancer un rituel.)">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Soprano envoûtante</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45693-1057-Concierge sinistre" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45693_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Concierge sinistre" data-html="true"
+                    data-content="Quand la Sinister Concierge meurt, vous pouvez l'exiler et mettre trois marqueurs &quot;temps&quot; sur elle. Si vous faites ainsi, exilez jusqu'&agrave; une cr&eacute;ature cibl&eacute;e et mettez trois marqueurs &quot;temps&quot; sur elle. Chaque carte exil&eacute;e de cette mani&egrave;re qui n'a pas la suspension acquiert la suspension.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Concierge sinistre</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/10611-165-Clique des marionnettistes" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/10611_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Clique des marionnettistes" data-html="true"
+                    data-content="Vol
+Quand la Clique des marionnettistes arrive sur le champ de bataille, mettez sur le champ de bataille, sous votre contr&ocirc;le, une carte de cr&eacute;ature cibl&eacute;e depuis le cimeti&egrave;re d'un adversaire. Elle acquiert la c&eacute;l&eacute;rit&eacute;. Au d&eacute;but de votre prochaine &eacute;tape de fin, exilez-la.
+Persistance (Quand cette cr&eacute;ature meurt, si elle n'avait pas de marqueurs -1/-1 sur elle, renvoyez-la sur le champ de bataille sous le contr&ocirc;le de son propri&eacute;taire avec un marqueur -1/-1 sur elle.)">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Clique des marionnet...</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/18822-234-Champion sanguinolent" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/18822_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Champion sanguinolent" data-html="true"
+                    data-content="Le Champion sanguinolent ne peut pas bloquer.
+Saccage &mdash; &lt;img src='/img/symbole/mana/1.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt; : Renvoyez sur le champ de bataille le Champion sanguinolent depuis votre cimeti&egrave;re. N'activez que si vous avez attaqu&eacute; ce tour-ci.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Champion sanguinolent</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/27240-413-Enjambeur du malheur" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/27240_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Enjambeur du malheur" data-html="true"
+                    data-content="Quand l'Enjambeur du malheur arrive sur le champ de bataille, cr&eacute;ez un jeton de cr&eacute;ature 0/1 blanche Ch&egrave;vre.
+Sacrifiez une autre cr&eacute;ature : Regard 1.
+&Eacute;chapp&eacute;e &mdash; &lt;img src='/img/symbole/mana/3.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt;, exilez quatre autres cartes de votre cimeti&egrave;re. (Vous pouvez lancer cette carte depuis votre cimeti&egrave;re pour son co&ucirc;t d'&eacute;chapp&eacute;e.)
+L'Enjambeur du malheur s'&eacute;chappe avec deux marqueurs +1/+1 sur lui.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Enjambeur du malheur</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/28678-420-Ombre du fort céleste" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/28678_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Ombre du fort céleste" data-html="true"
+                    data-content="Kick &lt;img src='/img/symbole/mana/2.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt;
+L'Ombre du fort c&eacute;leste ne peut pas bloquer.
+Si l'Ombre du fort c&eacute;leste a &eacute;t&eacute; kick&eacute;e, elle arrive sur le champ de bataille avec deux marqueurs +1/+1 sur elle.
+Toucheterre &mdash; &Agrave; chaque fois qu'un terrain arrive sur le champ de bataille sous votre contr&ocirc;le, si l'Ombre du fort c&eacute;leste est dans votre cimeti&egrave;re et que c'est votre tour, vous pouvez la lancer depuis votre cimeti&egrave;re ce tour-ci.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Ombre du fort céleste</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45695-1057-Détective obstiné" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45695_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Détective obstiné" data-html="true"
+                    data-content="Quand le D&eacute;tective obstin&eacute; arrive sur le champ de bataille, surveillez 2.
+&Agrave; chaque fois qu'un adversaire pioche sa deuxi&egrave;me carte &agrave; chaque tour, vous pouvez renvoyer dans votre main le D&eacute;tective obstin&eacute; depuis votre cimeti&egrave;re.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Détective obstiné</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/17130-363-Électromancien gobelin" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/17130_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Électromancien gobelin" data-html="true"
+                    data-content=" Les sorts d'&eacute;ph&eacute;m&egrave;re et de rituel que vous lancez co&ucirc;tent &lt;img src='/img/symbole/mana/1.png' loading='lazy'&gt; de moins &agrave; lancer.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Électromancien gobelin</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45705-1057-Syrix, porteur de la flamme" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45705_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Syrix, porteur de la flamme" data-html="true"
+                    data-content="Vol, c&eacute;l&eacute;rit&eacute;
+Au d&eacute;but de chaque &eacute;tape de fin, si une carte de cr&eacute;ature a quitt&eacute; votre cimeti&egrave;re ce tour-ci, un ph&eacute;nix cibl&eacute; que vous contr&ocirc;lez inflige un nombre de blessures &eacute;gal &agrave; sa force &agrave; n'importe quelle cible.
+&Agrave; chaque fois qu'un autre ph&eacute;nix que vous contr&ocirc;lez meurt, vous pouvez lancer Syrix, porteur de la Flamme depuis votre cimeti&egrave;re">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Syrix, porteur de la...</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45465-1057-Anhelo, le peintre" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45465_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Anhelo, le peintre" data-html="true"
+                    data-content="Contact mortel
+Le premier sort d'&eacute;ph&eacute;m&egrave;re ou de rituel que vous lancez &agrave; chaque tour a victime 2 (Au moment o&ugrave; vous lancez ce sort, vous pouvez sacrifier une cr&eacute;ature de force sup&eacute;rieure ou &eacute;gale &agrave; 2. Quand vous faites ainsi, copiez ce sort.).">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Anhelo, le peintre</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45512-1048-Cormela, voleuse majestueuse" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45512_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Cormela, voleuse majestueuse" data-html="true"
+                    data-content="C&eacute;l&eacute;rit&eacute;
+&lt;img src='/img/symbole/mana/1.png' loading='lazy'&gt;, &lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/u.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/r.png' loading='lazy'&gt;. Ne d&eacute;pensez ce mana que pour lancer des sorts d'&eacute;ph&eacute;m&egrave;re et/ou de rituel.
+Quand Cormela, voleuse majestueuse meurt, renvoyez jusqu'&agrave; une carte d'&eacute;ph&eacute;m&egrave;re ou de rituel cibl&eacute;e depuis votre cimeti&egrave;re dans votre main.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Cormela, voleuse maj...</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45689-1057-Parnesse, le pinceau subtil" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45689_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Parnesse, le pinceau subtil" data-html="true"
+                    data-content="&Agrave; chaque fois que vous ou qu'un permanent que vous contr&ocirc;lez devient la cible d'un sort ou d'une capacit&eacute; qu'un adversaire contr&ocirc;le, contrecarrez ce sort ou cette capacit&eacute; &agrave; moins que ce joueur ne paie 4 points de vie.
+&Agrave; chaque fois que vous copiez un sort, jusqu'&agrave; un adversaire cibl&eacute; peut aussi copier ce sort. Il peut choisir de nouvelles cibles pour cette copie.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Parnesse, le pinceau...</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/22374-392-Kess, Mage insoumise" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/22374_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Kess, Mage insoumise" data-html="true"
+                    data-content="Vol
+Pendant chacun de vos tours, vous pouvez lancer une carte d'&eacute;ph&eacute;m&egrave;re ou de rituel depuis votre cimeti&egrave;re. Si une carte lanc&eacute;e de cette mani&egrave;re devait &ecirc;tre mise dans votre cimeti&egrave;re ce tour-ci, exilez-la &agrave; la place.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Kess, Mage insoumise</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/15075-184-Réaction en chaîne" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/15075_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Réaction en chaîne" data-html="true"
+                    data-content="La R&eacute;action en cha&icirc;ne inflige X blessures &agrave; chaque cr&eacute;ature, X &eacute;tant le nombre de cr&eacute;atures sur le champ de bataille.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Réaction en chaîne</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45699-1057-Échange audacieux" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45699_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Échange audacieux" data-html="true"
+                    data-content="Victime 2 (Au moment o&ugrave; vous lancez ce sort, vous pouvez sacrifier une cr&eacute;ature de force sup&eacute;rieure ou &eacute;gale &agrave; 2. Quand vous faites ainsi, copiez ce sort.)
+Le propri&eacute;taire d'un permanent non-enchantement cibl&eacute; le m&eacute;lange dans sa biblioth&egrave;que et exile ensuite la carte du dessus de sa biblioth&egrave;que. Si c'est une carte de terrain, il la met sur le champ de bataille. Sinon, il peut la lancer sans payer son co&ucirc;t de mana.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Échange audacieux</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/1125-57-Fait ou fiction" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/1125_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Fait ou fiction" data-html="true"
+                    data-content="R&eacute;v&eacute;lez les cinq cartes du dessus de votre biblioth&egrave;que. Un adversaire s&eacute;pare ces cartes en deux tas. Mettez un de ces tas dans votre main et l'autre dans votre cimeti&egrave;re.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Fait ou fiction</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/1252-31-Analyse en profondeur" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/1252_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Analyse en profondeur" data-html="true"
+                    data-content="Le joueur cibl&eacute; pioche deux cartes.
+Flashback -&lt;img src='/img/symbole/mana/1.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/u.png' loading='lazy'&gt; , Payez 3 points de vie.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Analyse en profondeur</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/7772-46-Recherche effrénée" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/7772_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Recherche effrénée" data-html="true"
+                    data-content="Piochez deux cartes, puis d&eacute;faussez-vous de deux cartes. D&eacute;gagez jusqu'&agrave; trois terrains.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Recherche effrénée</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/10181-163-Contemplation" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/10181_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Contemplation" data-html="true" data-content="Regardez les trois cartes du dessus de votre biblioth&egrave;que, puis remettez-les dessus dans l'ordre de votre choix. Vous pouvez m&eacute;langer votre biblioth&egrave;que.
+Piochez une carte.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Contemplation</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/15511-190-Prédestination" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/15511_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Prédestination" data-html="true"
+                    data-content="Regard 2, puis piochez une carte. (Pour appliquer regard 2, regardez les deux cartes du dessus de votre biblioth&egrave;que. Mettez n'importe quel nombre d'entre elles au-dessous de votre biblioth&egrave;que et le reste, au-dessus, dans n'importe quel ordre.)">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Prédestination</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/17030-209-Invocation de Talrand" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/17030_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Invocation de Talrand" data-html="true"
+                    data-content="Cr&eacute;ez deux jetons de cr&eacute;ature 2/2 bleue Drak&ocirc;n avec le vol.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Invocation de Talrand</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/18835-234-Fouille temporelle" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/18835_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Fouille temporelle" data-html="true"
+                    data-content="Fouille 
+Regardez les sept cartes du dessus de votre biblioth&egrave;que. Mettez deux d'entre elles dans votre main et le reste au-dessous de votre biblioth&egrave;que dans l'ordre de votre choix.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Fouille temporelle</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/19325-240-Légion de clones" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/19325_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Légion de clones" data-html="true"
+                    data-content="Pour chaque cr&eacute;ature que le joueur cibl&eacute; contr&ocirc;le, mettez sur le champ de bataille un jeton qui est une copie de cette cr&eacute;ature.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Légion de clones</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/19938-955-Confluence mystique" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/19938_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Confluence mystique" data-html="true" data-content="Choisissez trois. Vous pouvez choisir le m&ecirc;me mode plus d'une fois.
+&bull; Contrecarrez un sort cibl&eacute; &agrave; moins que son contr&ocirc;leur ne paie &lt;img src='/img/symbole/mana/3.png' loading='lazy'&gt;.
+&bull; Renvoyez une cr&eacute;ature cibl&eacute;e dans la main de son propri&eacute;taire.
+&bull; Piochez une carte.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Confluence mystique</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/22405-320-Blâme du fleuve" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/22405_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Blâme du fleuve" data-html="true"
+                    data-content="Renvoyez tous les permanents non-terrain qu'un joueur cibl&eacute; contr&ocirc;le dans la main de leur propri&eacute;taire.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Blâme du fleuve</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/24001-344-Jugement de Zndrsplt" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/24001_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Jugement de Zndrsplt" data-html="true"
+                    data-content="Pour chaque joueur, choisissez ami ou ennemi. Chaque ami cr&eacute;e un jeton qui est une copie d'une cr&eacute;ature qu'il contr&ocirc;le. Chaque ennemi renvoie une cr&eacute;ature qu'il contr&ocirc;le dans la main de son propri&eacute;taire.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Jugement de Zndrsplt</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/26354-398-Issu des rêves" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/26354_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Issu des rêves" data-html="true"
+                    data-content="Regardez les sept cartes du dessus de votre biblioth&egrave;que. Mettez deux d'entre elles dans votre main et le reste au-dessous de votre biblioth&egrave;que dans un ordre al&eacute;atoire.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Issu des rêves</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45438-992-Petite discussion" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45438_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Petite discussion" data-html="true"
+                    data-content="Victime 1 (Au moment o&ugrave; vous lancez ce sort, vous pouvez sacrifier une cr&eacute;ature de force sup&eacute;rieure ou &eacute;gale &agrave; 1. Quand vous faites ainsi, copiez ce sort.)
+Regardez les deux cartes du dessus de votre biblioth&egrave;que. Mettez l'une d'elles dans votre main et l'autre au-dessous de votre biblioth&egrave;que.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Petite discussion</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45692-1057-Contrefaçon parfaite" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45692_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Contrefaçon parfaite" data-html="true"
+                    data-content="Victime 3 (Au moment o&ugrave; vous lancez ce sort, vous pouvez sacrifier une cr&eacute;ature de force sup&eacute;rieure ou &eacute;gale &agrave; 3. Quand vous faites ainsi, copiez ce sort.)
+Exilez une carte d'&eacute;ph&eacute;m&egrave;re ou de rituel cibl&eacute;e du cimeti&egrave;re d'un adversaire. Copiez cette carte. Vous pouvez lancer la copie sans payer son co&ucirc;t de mana.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Contrefaçon parfaite</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/7460-54-Maléfice hexagonal" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/7460_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Maléfice hexagonal" data-html="true"
+                    data-content="D&eacute;truisez six cr&eacute;atures cibl&eacute;es.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Maléfice hexagonal</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/16369-202-Armée des damnés" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/16369_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Armée des damnés" data-html="true"
+                    data-content="Cr&eacute;ez treize jetons de cr&eacute;ature 2/2 noire Zombie engag&eacute;s.
+Flashback &lt;img src='/img/symbole/mana/7.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt; (Vous pouvez lancer cette carte depuis votre cimeti&egrave;re pour son co&ucirc;t de flashback. Exilez-la ensuite.)">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Armée des damnés</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/16415-202-Interrompre la lignée" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/16415_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Interrompre la lignée" data-html="true"
+                    data-content="Exilez une cr&eacute;ature cibl&eacute;e et toutes les autres cr&eacute;atures ayant le m&ecirc;me nom que cette cr&eacute;ature.
+Flashback &lt;img src='/img/symbole/mana/5.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt; (Vous pouvez lancer cette carte depuis votre cimeti&egrave;re pour son co&ucirc;t de flashback. Exilez-la ensuite.)">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Interrompre la lignée</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/18519-229-Règne de l'Abîme" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/18519_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Règne de l'Abîme" data-html="true"
+                    data-content="Chaque joueur sacrifie une cr&eacute;ature. Cr&eacute;ez un jeton de cr&eacute;ature X/X noire D&eacute;mon avec le vol, X &eacute;tant la force totale des cr&eacute;atures sacrifi&eacute;es de cette mani&egrave;re.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Règne de l'Abîme</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/19319-240-Pacte damné" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/19319_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Pacte damné" data-html="true"
+                    data-content="Un joueur cibl&eacute; pioche X cartes et perd X points de vie.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Pacte damné</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/19928-1057-Recrutement effroyable" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/19928_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Recrutement effroyable" data-html="true"
+                    data-content="Chaque joueur meule X cartes. Pour chaque carte de cr&eacute;ature mise dans un cimeti&egrave;re de cette mani&egrave;re, vous cr&eacute;ez, engag&eacute;, un jeton de cr&eacute;ature 2/2 noire Zombie.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Recrutement effroyable</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/28557-420-Nourrir l'essaim" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/28557_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Nourrir l'essaim" data-html="true"
+                    data-content="D&eacute;truisez une cible, cr&eacute;ature ou enchantement, qu'un adversaire contr&ocirc;le. Vous perdez un nombre de points de vie &eacute;gal &agrave; la valeur de mana de ce permanent.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Nourrir l'essaim</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45694-1057-Décompte des corps" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45694_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Décompte des corps" data-html="true" data-content="Spectacle &lt;img src='/img/symbole/mana/B.png' loading='lazy'&gt; (Vous pouvez lancer ce sort pour son co&ucirc;t de spectacle &agrave; la place de son co&ucirc;t de mana si un adversaire a perdu des points de vie ce tour-ci.)
+Piochez une carte pour chaque cr&eacute;ature qui est morte sous votre contr&ocirc;le ce tour-ci.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Décompte des corps</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45696-1057-Faire un exemple" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45696_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Faire un exemple" data-html="true"
+                    data-content="Chaque adversaire s&eacute;pare les cr&eacute;atures qu'il contr&ocirc;le en deux tas. Pour chaque adversaire, vous choisissez un de ses tas. Chaque adversaire sacrifie les cr&eacute;atures du tas choisi. (Les tas peuvent &ecirc;tre vides.)">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Faire un exemple</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45697-1057-Gestion des déchets" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45697_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Gestion des déchets" data-html="true"
+                    data-content="Kick &lt;img src='/img/symbole/mana/3.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/B.png' loading='lazy'&gt;
+Exilez jusqu'&agrave; deux cartes cibl&eacute;es d'un cimeti&egrave;re unique. Si ce sort a &eacute;t&eacute; kick&eacute;, &agrave; la place, exilez le cimeti&egrave;re d'un joueur cibl&eacute;. Cr&eacute;ez un jeton de cr&eacute;ature 2/2 noire Gredin pour chaque carte de cr&eacute;ature exil&eacute;e de cette mani&egrave;re.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Gestion des déchets</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45698-1057-Pacte de Xander" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45698_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Pacte de Xander" data-html="true"
+                    data-content="Victime 2 (Au moment o&ugrave; vous lancez ce sort, vous pouvez sacrifier une cr&eacute;ature de force sup&eacute;rieure ou &eacute;gale &agrave; 2. Quand vous faites ainsi, copiez ce sort.)
+Chaque adversaire exile la carte du dessus de sa biblioth&egrave;que. Vous pouvez lancer des sorts parmi ces cartes ce tour-ci. Si vous lancez un sort de cette mani&egrave;re, payez un nombre de points de vie &eacute;gal &agrave; la valeur de mana de ce sort &agrave; la place de payer son co&ucirc;t de mana.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Pacte de Xander</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/10914-167-Appel du briseciel" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/10914_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Appel du briseciel" data-html="true"
+                    data-content="Mettez sur le champ de bataille un jeton de cr&eacute;ature 5/5 bleue et rouge &Eacute;l&eacute;mental avec le vol.Pistage (Vous pouvez lancer cette carte depuis votre cimeti&egrave;re en vous d&eacute;faussant d'une carte de terrain en plus de payer ses autres co&ucirc;ts.)">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Appel du briseciel</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/25228-378-Affres" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/25228_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Affres" data-html="true"
+                    data-content="D&eacute;truisez l'artefact cibl&eacute;, la cr&eacute;ature cibl&eacute;e ou le planeswalker cibl&eacute;.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Affres</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45421-1048-Charme des Maestros" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45421_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Charme des Maestros" data-html="true" data-content="Choisissez l'un &mdash;
+&bull; Regardez les cinq cartes du dessus de votre biblioth&egrave;que. Mettez l'une de ces cartes dans votre main et le reste dans votre cimeti&egrave;re.
+&bull; Chaque adversaire perd 3 points de vie et vous gagnez 3 points de vie.
+&bull; Le Charme des Maestros inflige 5 blessures &agrave; une cible, cr&eacute;ature ou planeswalker.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Charme des Maestros</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45704-1057-Confluence des Maestros" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45704_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Confluence des Maestros" data-html="true"
+                    data-content="Choisissez trois. Vous pouvez choisir le m&ecirc;me mode plus d'une fois &mdash;
+&bull; Renvoyez une carte d'&eacute;ph&eacute;m&egrave;re ou de rituel monochrome cibl&eacute;e depuis votre cimeti&egrave;re dans votre main.
+&bull; Une cr&eacute;ature cibl&eacute;e gagne -3/-3 jusqu'&agrave; la fin du tour.
+&bull; Incitez chaque cr&eacute;ature qu'un joueur cibl&eacute; contr&ocirc;le.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Confluence des Maestros</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/1326-16-Pierre de Guermont" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/1326_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Pierre de Guermont" data-html="true"
+                    data-content="&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &agrave; votre r&eacute;serve un mana de n'importe quelle couleur qu'un terrain contr&ocirc;l&eacute; par un adversaire pourrait produire.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Pierre de Guermont</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/2343-42-Jambières d'éclair" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/2343_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Jambières d'éclair" data-html="true" data-content="La cr&eacute;ature &eacute;quip&eacute;e a la c&eacute;l&eacute;rit&eacute; et le linceul. (Elle ne peut pas &ecirc;tre la cible de sorts ou de capacit&eacute;s.)
+&Eacute;quipement &lt;img src='/img/symbole/mana/0.png' loading='lazy'&gt;">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Jambières d'éclair</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/4069-56-Cachet de Rakdos" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/4069_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Cachet de Rakdos" data-html="true"
+                    data-content="&lt;img src='/img/symbole/mana/1.png' loading='lazy'&gt;, &lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/r.png' loading='lazy'&gt; &agrave; votre r&eacute;serve.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Cachet de Rakdos</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/6298-54-Cachet de Dimir" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/6298_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Cachet de Dimir" data-html="true"
+                    data-content="&lt;img src='/img/symbole/mana/1.png' loading='lazy'&gt;, &lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/u.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/b.png' loading='lazy'&gt; &agrave; votre r&eacute;serve.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Cachet de Dimir</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/6486-55-Cachet d'Izzet" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/6486_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Cachet d'Izzet" data-html="true"
+                    data-content="&lt;img src='/img/symbole/mana/1.png' loading='lazy'&gt;, &lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/u.png' loading='lazy'&gt;&lt;img src='/img/symbole/mana/r.png' loading='lazy'&gt; &agrave; votre r&eacute;serve.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Cachet d'Izzet</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/8736-44-Babiole du voyageur" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/8736_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Babiole du voyageur" data-html="true"
+                    data-content="&lt;img src='/img/symbole/mana/2.png' loading='lazy'&gt;, &lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt;, sacrifiez la Babiole du voyageur : Cherchez dans votre biblioth&egrave;que une carte de terrain de base et mettez cette carte sur le champ de bataille engag&eacute;e. M&eacute;langez ensuite votre biblioth&egrave;que.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Babiole du voyageur</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/9710-4-Anneau solaire" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/9710_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Anneau solaire" data-html="true"
+                    data-content="&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez &lt;img src='/img/symbole/mana/2.png' loading='lazy'&gt; &agrave; votre r&eacute;serve.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Anneau solaire</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/15763-193-Cuve de mimétisme" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/15763_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Cuve de mimétisme" data-html="true"
+                    data-content="Empreinte &mdash; &Agrave; chaque fois qu'une cr&eacute;ature non-jeton meurt, vous pouvez exiler cette carte. Si vous faites ainsi, renvoyez chaque autre carte exil&eacute;e par la Cuve de mim&eacute;tisme dans le cimeti&egrave;re de son propri&eacute;taire.
+&lt;img src='/img/symbole/mana/3.png' loading='lazy'&gt;, &lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Cr&eacute;ez un jeton qui est une copie d'une carte exil&eacute;e par la Cuve de mim&eacute;tisme. Elle acquiert la c&eacute;l&eacute;rit&eacute;. Exilez-la au d&eacute;but de la prochaine &eacute;tape de fin.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Cuve de mimétisme</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/18978-418-Sphère du commandant" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/18978_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Sphère du commandant" data-html="true"
+                    data-content="&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez un mana de n'importe quelle couleur de l'identit&eacute; couleur de votre commandant.
+Sacrifiez la Sph&egrave;re du commandant : Piochez une carte.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Sphère du commandant</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/26632-407-Cachet d'ésotérisme" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/26632_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Cachet d'ésotérisme" data-html="true"
+                    data-content="&lt;img src='/img/symbole/mana/t.png' loading='lazy'&gt; : Ajoutez un mana de n'importe quelle couleur de l'identit&eacute; couleur de votre commandant.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Cachet d'ésotérisme</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/27978-1057-Bâton dédoublant" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/27978_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Bâton dédoublant" data-html="true"
+                    data-content="Si vous deviez copier un sort au moins une fois, &agrave; la place copiez-le autant de fois plus une fois suppl&eacute;mentaire. Vous pouvez choisir de nouvelles cibles pour la copie suppl&eacute;mentaire.
+&lt;img src='/img/symbole/mana/7.png' loading='lazy'&gt;, &lt;img src='/img/symbole/mana/T.png' loading='lazy'&gt; : Copiez un sort d'&eacute;ph&eacute;m&egrave;re ou de rituel cibl&eacute; que vous contr&ocirc;lez. Vous pouvez choisir de nouvelles cibles pour cette copie.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Bâton dédoublant</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45706-1057-Boguet de contrebandier" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45706_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Boguet de contrebandier" data-html="true"
+                    data-content="Cachette 4
+&Agrave; chaque fois que le Boguet de contrebandier inflige des blessures de combat &agrave; un joueur, vous pouvez lancer la carte exil&eacute;e sans payer son co&ucirc;t de mana. Si vous faites ainsi, renvoyer le Boguet de contrebandier dans la main de son propri&eacute;taire.
+Pilotage 2">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Boguet de contrebandier</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/19941-1057-Rituel de l'orage en furie" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/19941_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Rituel de l'orage en furie" data-html="true"
+                    data-content="Les cr&eacute;atures nomm&eacute;es Furie d'&eacute;clairs ne peuvent pas vous attaquer ou attaquer les planeswalkers que vous contr&ocirc;lez.
+Au d&eacute;but de l'entretien de chaque joueur, ce joueur cr&eacute;e un jeton de cr&eacute;ature 5/1 rouge &Eacute;l&eacute;mental appel&eacute; Furie d'&eacute;clairs. Il a le pi&eacute;tinement, la c&eacute;l&eacute;rit&eacute; et &laquo; Au d&eacute;but de l'&eacute;tape de fin, sacrifiez cette cr&eacute;ature. &raquo;">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Rituel de l'orage en...</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/28202-898-Double vision" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/28202_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Double vision" data-html="true"
+                    data-content="&Agrave; chaque fois que vous lancez votre premier sort d'&eacute;ph&eacute;m&egrave;re ou de rituel &agrave; chaque tour, copiez ce sort. Vous pouvez choisir de nouvelles cibles pour cette copie.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Double vision</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45700-1057-Itération résolue" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45700_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Itération résolue" data-html="true"
+                    data-content="Au d&eacute;but du combat pendant votre tour, peuplez. Le jeton cr&eacute;&eacute; de cette mani&egrave;re acquiert la c&eacute;l&eacute;rit&eacute;. Sacrifiez-le au d&eacute;but de la prochaine &eacute;tape de fin.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Itération résolue</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45691-1057-Duplication extravagante" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45691_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Duplication extravagante" data-html="true"
+                    data-content="Au d&eacute;but de votre entretien, cr&eacute;ez un jeton qui est une copie d'un autre permanent non-terrain cibl&eacute; que vous contr&ocirc;lez.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Duplication extravag...</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
+        <div style="display:inline-block;margin-top: 20px; font-size:12px;">
+            <a href="/magic/carte/45703-1057-Course-poursuite cryptique" target="_parent">
+                <div style="width:180px;height:180px;background:url(/img/decks/45703_1.png);" data-toggle="popover"
+                    data-placement="auto right" role="button" title="Course-poursuite cryptique" data-html="true"
+                    data-content="&Agrave; chaque fois que vous lancez un sort d'&eacute;ph&eacute;m&egrave;re ou de rituel depuis votre main, manifestez la carte du dessus de votre biblioth&egrave;que.
+&Agrave; chaque fois qu'une cr&eacute;ature face cach&eacute;e que vous contr&ocirc;lez meurt, exilez-la si c'est une carte d'&eacute;ph&eacute;m&egrave;re ou de rituel. Vous pouvez lancer cette carte jusqu'&agrave; la fin de votre prochain tour.">
+                </div>
+                <div style="width:180px;height:20px;">
+                    <table>
+                        <tr>
+                            <td><span>1 x</span> Course-poursuite cry...</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </a>
+        </div>
     </div>
-    <footer>
-        <div class="container" style="margin: 10px;">
-            <a href="/">Accueil</a> | <a href="monpanier.php">Mon Panier</a> | <a href="moncompte.php">Mon Compte</a> |
-            <a href="ports.php">Frais de Ports</a> | <a href="page-1-conditions-generales-de-vente.html">Conditions
-                Générales de Vente</a> | <a href="contact.php">Contactez-nous</a> | <a
-                href="https://boutique.magiccorporation.com/page-7-horaires.html">Horaires</a>
-        </div>
-        <p>MagicCorporation
-            24 Boulevard Beaumarchais
-            75011 Paris</p>
-        <p>Télephone : 09.54.21.07.25</p>
-    </footer>
-    <script src="https://boutique.magiccorporation.com/site/magiccorporation/libs/js/cookiechoices.js"></script>
-    <script>document.addEventListener('DOMContentLoaded', function (event) { cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'https://boutique.magiccorporation.com/page-1-conditions-generales-de-vente.html'); });</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/javascript/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('[data-toggle="popover"]').popover({ trigger: "hover", container: ".deck" })
+        })
+    </script>
 </body>
 
 </html>
