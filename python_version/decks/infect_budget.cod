@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cockatrice_deck version="1">
+    <deckname>decks/infect_budget</deckname>
+    <comments>généré automatiquement</comments>
+    <zone name="main">
+        <card number="4" name="Blight Mamba"/>
+        <card number="4" name="Blossoming Defense"/>
+        <card number="4" name="Fortifying Provisions"/>
+        <card number="5" name="Glistener Elf"/>
+        <card number="4" name="Groundswell"/>
+        <card number="4" name="Might of Old Krosa"/>
+        <card number="4" name="Nourishing Shoal"/>
+        <card number="4" name="Scale Up"/>
+        <card number="4" name="Titanoth Rex"/>
+        <card number="4" name="Woracious Wurm"/>
+        <card number="19" name="Forest"/>
+    </zone>
+</cockatrice_deck>

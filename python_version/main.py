@@ -2,9 +2,12 @@ import googlesearch as gr
 import requests as r
 import re
 import os
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import QFont
 from bs4 import BeautifulSoup as BS
+from enum import Enum
+
+class WebSites(Enum):
+    magiccorp = "https://boutique.magiccorporation.com/"
+    cardmarket = "https://www.cardmarket.com/fr/Magic/"
 
 class Card:
     def __init__(self, name = None, url = None):
@@ -16,11 +19,11 @@ class Card:
         self.filename = ""
         self.info_tab = self.get_info()
         
-    def get_url(self, name):
+    def get_url(self, name, site = "https://boutique.magiccorporation.com/"):
         if name == None:
             print("No name")
             return None
-        for my_url in gr.search("site:https://boutique.magiccorporation.com/ " + name, num = 1, stop = 1):
+        for my_url in gr.search("site:" + name, num = 1, stop = 1):
             self.url = my_url
         return self.url
         
@@ -33,7 +36,6 @@ class Card:
         self.name = ' '.join(self.url.split('/')[-1].split('-')[3:]).replace('-', ' ').replace('.html', '')
         return self.name
 
-    
     def get_info(self, debug = False):
         '''
         Récupère les informations d'achat
@@ -95,11 +97,11 @@ class Card:
                             
         dico = {x:y for x,y in zip(edition, zip(price, quantity, condition))}
         self.info_tab = dico
-        if debug == False:
-            os.remove(f"./cards/{self.filename}")
+        # if debug == False:
+        #     print("Suppression du fichier " + self.filename)
+        #     os.remove(f"./cards/{self.filename}")
         return dico
 
-    
     def debug_info(self):
         print("Name : " + self.name)
         print("Url : " + str(self.url))
@@ -117,7 +119,46 @@ class Card:
         else:
             return (min_price_edition, min_price)
             
-        
+            
+def get_price_from(source_url:str = "magiccorp", debug:bool = False):
+    if (source_url == "magiccorp"):
+        edition = []
+        price = []
+        quantity = []
+        condition = []
+        soup = BS(text,"lxml")
+        for p in soup.find_all('div'):
+            if p.get('class') == ['dispo']:
+                for p3 in p.find_all('td'):
+                    if p3.get_text() != "" :
+                        if p3.find('select') != None:
+                            if debug:
+                                print("Quantité : " + p3.get_text()[-1])
+                            quantity.append(p3.get_text()[-1])
+                        elif p3.get('style') == None:
+                            if p3.find('img') != None:
+                                if debug:
+                                    print("Edition : " + p3.get_text())
+                                edition.append(p3.get_text())
+                            else:
+                                if debug:
+                                    print("Condition : " + p3.get_text())
+                                condition.append(p3.get_text())
+                        else:
+                            if debug:
+                                print("Prix : " + p3.get_text())
+                            price.append(p3.get_text())
+                            
+        dico = {x:y for x,y in zip(edition, zip(price, quantity, condition))}
+    elif (source_url == "cardmarket"):
+        soup = BS(text, "html.parser")    
+        dd = [d.text for d in soup.find_all("dd")]
+        dt = [d.text for d in soup.find_all("dt")]
+
+        dico = dict(zip(dt, dd))
+        for k, v in dico.items():
+            print(k, v)
+        return
         
 class Deck:
     def __init__(self, name, card_list_file = None, url = None, deck_type = "Commander", auto = True):
@@ -161,6 +202,7 @@ class Deck:
     def write_card_list(self, deck_name):
         '''Ecrit la liste des cartes du deck dans un fichier.cod (format cockatrice)'''
         with open("./decks/" + deck_name.replace(" ", "_") + ".cod", 'w', encoding="UTF8") as f:
+            f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
             f.write('<cockatrice_deck version="1">\n')
             f.write('\t<deckname>' + self.name + '</deckname>\n')
             f.write('\t<comments>généré automatiquement</comments>\n')
@@ -227,32 +269,21 @@ class Deck:
 
 
 def main():
-    # app = QApplication([])
-    # window = QWidget()
-    # window.setGeometry(300, 300, 500, 500)
-    # window.setWindowTitle("Magic Card Price")
-    
-    # label = QLabel(window)
-    # label.setText("Hello World")
-    # label.setFont(QFont("Arial", 20))
-    
-    # layout = QVBoxLayout()
-    
-    # label = QLabel("Press Button")
-    # button = QPushButton("Click Me")
-    
-    # window.show()
-    # app.exec_()
     return
     
+
+def cleanup():
+    for file in os.listdir("./cards"):
+        os.remove("./cards/" + file)
     
 def debug_main():
-    # deck = Deck("massacre des maestros")  
-    # card = Card("cornucopia") 
-    # card.debug_info()
+    card = Card("pas de ce monde") 
+    card.get_info(debug=True)
+    card.debug_info()
+    cleanup()
     
-    deck = Deck("massacre des maestros")
-    deck.write_card_list(deck.name)
+    # deck = Deck("pouvoirs de la ruine")
+    # deck.write_card_list(deck.name)
     # print(deck.get_deck_price())
     
     

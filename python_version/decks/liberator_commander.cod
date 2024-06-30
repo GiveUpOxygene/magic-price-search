@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cockatrice_deck version="1">
+    <deckname></deckname>
+    <comments></comments>
+    <zone name="main">
+        <card number="1" name="Artisan of Kozilek"/>
+        <card number="1" name="Kozilek, the Great Distortion"/>
+        <card number="1" name="Kozilek's Channeler"/>
+        <card number="1" name="Meteor Golem"/>
+        <card number="2" name="Wastes (a)"/>
+        <card number="1" name="Bane of Bala Ged"/>
+        <card number="1" name="Spawning Bed"/>
+        <card number="1" name="Endbringer"/>
+        <card number="1" name="Blade of Selves"/>
+        <card number="1" name="Worn Powerstone"/>
+        <card number="1" name="Void Winnower"/>
+        <card number="1" name="Hand of Emrakul"/>
+        <card number="1" name="Skyclave Relic"/>
+        <card number="1" name="Darksteel Forge"/>
+        <card number="1" name="Mystic Forge"/>
+        <card number="1" name="Forge of Heroes"/>
+        <card number="1" name="Basalt Monolith"/>
+        <card number="1" name="Pristine Talisman"/>
+        <card number="1" name="Emergence Zone"/>
+        <card number="1" name="Blast Zone"/>
+        <card number="1" name="Skittering Invasion"/>
+        <card number="1" name="Unstable Obelisk"/>
+        <card number="1" name="Titan's Presence"/>
+        <card number="1" name="Sol Ring"/>
+        <card number="1" name="Herald's Horn"/>
+        <card number="1" name="Eye of Ugin"/>
+        <card number="1" name="Doubling Cube"/>
+        <card number="1" name="Hedron Archive"/>
+        <card number="1" name="Dreamstone Hedron"/>
+        <card number="1" name="Pathrazer of Ulamog"/>
+        <card number="1" name="Ulamog's Crusher"/>
+        <card number="1" name="Ulamog, the Ceaseless Hunger"/>
+        <card number="1" name="Ulamog, the Infinite Gyre"/>
+        <card number="1" name="Treasure Vault"/>
+        <card number="1" name="Metalwork Colossus"/>
+        <card number="1" name="It That Betrays"/>
+        <card number="1" name="Endless One"/>
+        <card number="1" name="Bontu's Monument"/>
+        <card number="1" name="Swiftfoot Boots"/>
+        <card number="1" name="Zhalfirin Void"/>
+        <card number="1" name="Orazca Relic"/>
+        <card number="1" name="Sanctum of Ugin"/>
+        <card number="1" name="Ugin, the Ineffable"/>
+        <card number="1" name="Temple of the False God"/>
+        <card number="1" name="Gilded Lotus"/>
+        <card number="1" name="Blightsteel Colossus"/>
+        <card number="1" name="Mystifying Maze"/>
+        <card number="1" name="Inspiring Statuary"/>
+        <card number="1" name="Desolation Twin"/>
+        <card number="1" name="Eldrazi Mimic"/>
+        <card number="1" name="Eldrazi Temple"/>
+        <card number="1" name="Eldrazi Conscription"/>
+        <card number="1" name="Breaker of Armies"/>
+        <card number="1" name="All Is Dust"/>
+        <card number="1" name="Darksteel Citadel"/>
+        <card number="1" name="Mage-Ring Network"/>
+        <card number="1" name="Tomb of the Spirit Dragon"/>
+        <card number="1" name="Solemn Simulacrum"/>
+        <card number="1" name="Ornithopter of Paradise"/>
+        <card number="1" name="Hedron Crawler"/>
+        <card number="1" name="Radiant Fountain"/>
+        <card number="1" name="Deceiver of Form"/>
+        <card number="1" name="Forsaken Monument"/>
+        <card number="1" name="Blinkmoth Well"/>
+        <card number="1" name="Sea Gate Wreckage"/>
+        <card number="1" name="Sunscorched Desert"/>
+        <card number="1" name="Blasted Landscape"/>
+        <card number="1" name="Shrine of the Forsaken Gods"/>
+        <card number="1" name="Urza's Mine"/>
+        <card number="1" name="Urza's Power Plant"/>
+        <card number="1" name="Urza's Tower"/>
+        <card number="1" name="Reality Smasher"/>
+        <card number="1" name="Mind Stone"/>
+        <card number="1" name="Eye of Vecna"/>
+        <card number="1" name="Clock of Omens"/>
+        <card number="1" name="Unwinding Clock"/>
+        <card number="1" name="Quicksand"/>
+        <card number="1" name="Rogue's Passage"/>
+        <card number="1" name="Expedition Map"/>
+        <card number="1" name="Seer's Lantern"/>
+        <card number="1" name="Guildless Commons"/>
+        <card number="1" name="Oracle's Vault"/>
+        <card number="1" name="Candles of Leng"/>
+        <card number="1" name="Nephalia Academy"/>
+        <card number="1" name="Vorrac Battlehorns"/>
+        <card number="1" name="Guardian Idol"/>
+        <card number="1" name="Conduit of Ruin"/>
+        <card number="1" name="Thran Dynamo"/>
+        <card number="1" name="Goblin Firebomb"/>
+        <card number="1" name="Stonespeaker Crystal"/>
+        <card number="1" name="Everflowing Chalice"/>
+        <card number="1" name="Planar Bridge"/>
+        <card number="1" name="Palladium Myr"/>
+        <card number="1" name="Not of This World"/>
+        <card number="1" name="Crystal Vein"/>
+        <card number="1" name="Grasping Dunes"/>
+        <card number="1" name="War Room"/>
+        <card number="1" name="Oblivion Sower"/>
+    </zone>
+    <zone name="side">
+        <card number="1" name="Liberator, Urza's Battlethopter"/>
+    </zone>
+</cockatrice_deck>
